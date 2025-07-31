@@ -4,7 +4,7 @@ A modern, responsive portfolio website showcasing engineering projects, professi
 
 ## 🌟 Live Demo
 
-Visit the live website: [Your GitHub Pages URL will go here]
+Visit the live website: [aviaggarwal.me]
 
 ## 📋 About
 
