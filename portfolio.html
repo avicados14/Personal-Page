@@ -221,10 +221,42 @@
         }
 
         /* Projects Section */
+        .projects-container {
+            position: relative;
+            margin: 0 -20px;
+        }
+
+        .projects-scroll-wrapper {
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 20px;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .projects-scroll-wrapper::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .projects-scroll-wrapper::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .projects-scroll-wrapper::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 10px;
+        }
+
+        .projects-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+            background: #5a67d8;
+        }
+
         .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            display: flex;
             gap: 2rem;
+            min-width: max-content;
+            padding-bottom: 10px;
         }
 
         .project-item {
@@ -232,11 +264,59 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex: 0 0 350px;
+            min-height: 300px;
         }
 
         .project-item:hover {
             transform: translateY(-5px);
+            cursor: pointer;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-item:hover .project-header {
+            background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+        }
+
+        .scroll-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .scroll-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .scroll-btn:hover {
+            background: #5a67d8;
+            transform: scale(1.1);
+        }
+
+        .scroll-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .projects-indicator {
+            text-align: center;
+            margin-top: 1rem;
+            color: #666;
+            font-size: 0.9rem;
         }
 
         .project-header {
@@ -511,41 +591,120 @@
             <!-- Projects Section -->
             <section class="section">
                 <h2>Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-item">
-                        <div class="project-header">
-                            <h3>Arduino Fingerprint Lockbox</h3>
-                            <div class="project-duration">Nov 2024 - Dec 2024</div>
-                        </div>
-                        <div class="project-content">
-                            <div class="project-description">
-                                As part of the Introduction to Mechanical Engineering: Programming and Hardware Interface (MEGN200) course at the Colorado School of Mines, I collaborated on designing and fabricating a functional lockbox with fingerprint authentication.
-                            </div>
-                            <div class="skills-tags">
-                                <span class="skill-tag">Arduino</span>
-                                <span class="skill-tag">Computer-Aided Design (CAD)</span>
-                                <span class="skill-tag">Hardware Interface</span>
-                                <span class="skill-tag">Programming</span>
-                            </div>
+                <div class="projects-container">
+                    <div class="projects-scroll-wrapper" id="projectsScroll">
+                        <div class="projects-grid">
+                            <a href="https://www.linkedin.com/in/aviaggarwal05/details/projects/" target="_blank" class="project-item" style="text-decoration: none; color: inherit;">
+                                <div class="project-header">
+                                    <h3>Arduino Fingerprint Lockbox</h3>
+                                    <div class="project-duration">Nov 2024 - Dec 2024</div>
+                                </div>
+                                <div class="project-content">
+                                    <div class="project-description">
+                                        As part of the Introduction to Mechanical Engineering: Programming and Hardware Interface (MEGN200) course at the Colorado School of Mines, I collaborated on designing and fabricating a functional prototype of a fingerprint-secured lockbox. This project integrated advanced technologies including Arduino programming for biometric authentication and system control, 3D printing to construct the lockbox's durable, custom enclosure, and hardware interfacing for seamless operation of electronic components.
+                                    </div>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag">Arduino</span>
+                                        <span class="skill-tag">Computer-Aided Design (CAD)</span>
+                                        <span class="skill-tag">Product Development</span>
+                                        <span class="skill-tag">3D Printing</span>
+                                        <span class="skill-tag">Soldering</span>
+                                        <span class="skill-tag">Presentation Skills</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/aviaggarwal05/details/projects/" target="_blank" class="project-item" style="text-decoration: none; color: inherit;">
+                                <div class="project-header">
+                                    <h3>Derby Car Design and Fabrication</h3>
+                                    <div class="project-duration">Sep 2024 - Dec 2024</div>
+                                </div>
+                                <div class="project-content">
+                                    <div class="project-description">
+                                        As part of the Introduction to Mechanical Engineering: Design & Fabrication (MEGN201) course at the Colorado School of Mines, I worked with a team to design and fabricate a metal derby car. This project provided hands-on experience with mechanical design, machining processes, and precision fabrication. Key aspects included chassis redesign, component modifications, and utilizing CNC mills and CO2 lasers for high-precision fabrication.
+                                    </div>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag">Computer-Aided Design (CAD)</span>
+                                        <span class="skill-tag">Machining</span>
+                                        <span class="skill-tag">SOLIDWORKS</span>
+                                        <span class="skill-tag">CNC Machine</span>
+                                        <span class="skill-tag">Precision Machining</span>
+                                        <span class="skill-tag">Tolerance Analysis</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/aviaggarwal05/details/projects/" target="_blank" class="project-item" style="text-decoration: none; color: inherit;">
+                                <div class="project-header">
+                                    <h3>Suitcase Redesign</h3>
+                                    <div class="project-duration">Jan 2024 - May 2024</div>
+                                </div>
+                                <div class="project-content">
+                                    <div class="project-description">
+                                        As part of the Cornerstone Design (EDNS151) course at Colorado School of Mines, I contributed to a team effort to redesign a suitcase for enhanced durability and security. My role focused on developing a mobile app that allowed users to securely lock and unlock the suitcase via Bluetooth connectivity, incorporate two-factor authentication, and seamlessly integrate with the suitcase's electronic locking system.
+                                    </div>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag">Teamwork</span>
+                                        <span class="skill-tag">Arduino</span>
+                                        <span class="skill-tag">Product Development</span>
+                                        <span class="skill-tag">Stakeholder Engagement</span>
+                                        <span class="skill-tag">Microsoft Office</span>
+                                        <span class="skill-tag">Problem Solving</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/aviaggarwal05/details/projects/" target="_blank" class="project-item" style="text-decoration: none; color: inherit;">
+                                <div class="project-header">
+                                    <h3>NASA Hunch Micro-G Dice Rolling</h3>
+                                    <div class="project-duration">Sep 2022 - May 2023</div>
+                                </div>
+                                <div class="project-content">
+                                    <div class="project-description">
+                                        Was presented with a problem NASA was having with astronauts not having enjoyable games in space due to the inability to roll dice. Worked in a team to create a testing system and create prototypes of a magnetic dice-rolling blaster. Was in charge of testing and ensuring that the randomness of dice was maintained, and was in charge of modifying 3D printers with hardened steel 3D printing nozzles. Design Review Finalist - our solution was selected for testing in MIT's reduced-gravity aircraft.
+                                    </div>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag">Statistical Data Analysis</span>
+                                        <span class="skill-tag">Solid Edge</span>
+                                        <span class="skill-tag">3D Printing</span>
+                                        <span class="skill-tag">Presentation Skills</span>
+                                        <span class="skill-tag">Iterative Design</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- 
+                            TEMPLATE FOR ADDING NEW PROJECTS:
+                            Copy the structure below and update with your project information
+                            
+                            <a href="https://www.linkedin.com/in/aviaggarwal05/details/projects/" target="_blank" class="project-item" style="text-decoration: none; color: inherit;">
+                                <div class="project-header">
+                                    <h3>Your Project Title</h3>
+                                    <div class="project-duration">Start Date - End Date</div>
+                                </div>
+                                <div class="project-content">
+                                    <div class="project-description">
+                                        Your detailed project description goes here. Explain what you did, what technologies you used, and what you learned or accomplished.
+                                    </div>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag">Skill 1</span>
+                                        <span class="skill-tag">Skill 2</span>
+                                        <span class="skill-tag">Skill 3</span>
+                                        <span class="skill-tag">Skill 4</span>
+                                    </div>
+                                </div>
+                            </a>
+                            -->
                         </div>
                     </div>
-
-                    <div class="project-item">
-                        <div class="project-header">
-                            <h3>Derby Car Design and Fabrication</h3>
-                            <div class="project-duration">Sep 2024 - Dec 2024</div>
-                        </div>
-                        <div class="project-content">
-                            <div class="project-description">
-                                As part of the Introduction to Mechanical Engineering: Design & Fabrication (MEGN201) course at the Colorado School of Mines, I worked with a team to design and fabricate a metal derby car, focusing on aerodynamics and performance optimization.
-                            </div>
-                            <div class="skills-tags">
-                                <span class="skill-tag">Computer-Aided Design (CAD)</span>
-                                <span class="skill-tag">Machining</span>
-                                <span class="skill-tag">Manufacturing</span>
-                                <span class="skill-tag">Team Collaboration</span>
-                            </div>
-                        </div>
+                    
+                    <div class="scroll-controls">
+                        <button class="scroll-btn" id="scrollLeft" onclick="scrollProjects('left')">‹</button>
+                        <button class="scroll-btn" id="scrollRight" onclick="scrollProjects('right')">›</button>
+                    </div>
+                    
+                    <div class="projects-indicator">
+                        <span id="projectIndicator">Scroll to see more projects →</span>
                     </div>
                 </div>
             </section>
@@ -593,6 +752,106 @@
             <p>&copy; 2025 Avi Aggarwal. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Projects carousel functionality
+        function scrollProjects(direction) {
+            const scrollContainer = document.getElementById('projectsScroll');
+            const scrollAmount = 370; // Width of one project card plus gap
+            
+            if (direction === 'left') {
+                scrollContainer.scrollBy({
+                    left: -scrollAmount,
+                    behavior: 'smooth'
+                });
+            } else {
+                scrollContainer.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
+            
+            // Update scroll buttons state after a short delay
+            setTimeout(updateScrollButtons, 300);
+        }
+
+        function updateScrollButtons() {
+            const scrollContainer = document.getElementById('projectsScroll');
+            const leftBtn = document.getElementById('scrollLeft');
+            const rightBtn = document.getElementById('scrollRight');
+            const indicator = document.getElementById('projectIndicator');
+            
+            // Check if at the beginning
+            if (scrollContainer.scrollLeft <= 0) {
+                leftBtn.disabled = true;
+                indicator.textContent = 'Scroll to see more projects →';
+            } else {
+                leftBtn.disabled = false;
+            }
+            
+            // Check if at the end
+            if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth - 10) {
+                rightBtn.disabled = true;
+                indicator.textContent = '← Scroll back to see previous projects';
+            } else {
+                rightBtn.disabled = false;
+            }
+            
+            // Update indicator for middle position
+            if (scrollContainer.scrollLeft > 0 && scrollContainer.scrollLeft < scrollContainer.scrollWidth - scrollContainer.clientWidth - 10) {
+                indicator.textContent = '← Scroll left or right to see more projects →';
+            }
+        }
+
+        // Initialize scroll buttons state and add scroll listener
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollContainer = document.getElementById('projectsScroll');
+            
+            // Initial state
+            updateScrollButtons();
+            
+            // Update buttons on scroll
+            scrollContainer.addEventListener('scroll', updateScrollButtons);
+            
+            // Handle touch/mouse wheel scrolling
+            scrollContainer.addEventListener('wheel', function(e) {
+                if (e.deltaY !== 0) {
+                    e.preventDefault();
+                    scrollContainer.scrollBy({
+                        left: e.deltaY > 0 ? 100 : -100,
+                        behavior: 'smooth'
+                    });
+                    setTimeout(updateScrollButtons, 100);
+                }
+            });
+        });
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.target.closest('.projects-container')) {
+                if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    scrollProjects('left');
+                } else if (e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    scrollProjects('right');
+                }
+            }
+        });
+    </script>
 </body>
 </html>
 

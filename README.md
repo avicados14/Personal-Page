@@ -1,174 +1,237 @@
-# Avi Aggarwal - Professional Portfolio Website
+# Avi Aggarwal - Personal Portfolio Website
 
-A modern, responsive portfolio website showcasing engineering projects, professional experience, and personal passions.
+A modern, responsive personal portfolio website showcasing professional experience, education, projects, and passions in mechanical engineering and technology.
 
-## 🌟 Live Demo
+## 🌟 Features
 
-Visit the live website: [aviaggarwal.me]
+### 🏠 Home Page (`index.html`)
+- **Hero Section**: Professional introduction with call-to-action buttons
+- **Features Section**: Highlighting engineering excellence, technical skills, and leadership
+- **Stats Section**: Key metrics and achievements
+- **Responsive Design**: Optimized for desktop and mobile devices
+- **Smooth Animations**: CSS animations and hover effects
 
-## 📋 About
+### 📁 Portfolio Page (`portfolio.html`)
+- **Professional Experience**: Detailed work history with descriptions and skills
+- **Education**: Academic background and achievements
+- **Projects Carousel**: Horizontal scrolling showcase of projects with navigation controls
+  - **Clickable Projects**: Each project links to LinkedIn projects section
+  - **Scroll Controls**: Left/right arrow buttons for easy navigation
+  - **Keyboard Support**: Arrow keys for navigation when focused
+  - **Mouse Wheel Support**: Horizontal scrolling with mouse wheel
+  - **Touch Support**: Swipe gestures on mobile devices
+  - **Visual Indicators**: Dynamic scroll position feedback
+  - **Scalable Design**: Easy to add unlimited projects without layout issues
+- **Certifications**: Professional licenses and certifications
+- **Skills Tags**: Visual representation of technical competencies
 
-This portfolio website was designed to showcase Avi Aggarwal's professional experience as a Mechanical Engineering student at Colorado School of Mines and Compressors Engineering Intern at Sundyne. The site highlights engineering projects, teaching experience, and personal passions in a clean, modern design.
+### ❤️ Passions Page (`passions.html`)
+- **Technology Interests**: AI, 3D Printing, Computer Building
+- **Mechanical Interests**: Formula One, Woodworking, Aircraft
+- **Other Interests**: Infrastructure, Transportation, Travel
+- **Detailed Descriptions**: In-depth exploration of each passion area
+- **Engineering Connections**: How interests relate to professional work
 
-## 🚀 Features
+### 📞 Contact & Booking Page (`contact.html`)
+- **Contact Information**: Email, LinkedIn, location, and current status
+- **Contact Form**: Direct email integration with mailto functionality
+- **Meeting Scheduler**: Embedded Reclaim.ai booking widget
+- **Social Links**: Quick access to professional profiles
 
-- **Responsive Design** - Optimized for desktop, tablet, and mobile devices
-- **Modern UI/UX** - Clean, professional design with smooth animations
-- **Interactive Elements** - Hover effects, smooth scrolling, and dynamic content
-- **Integrated Booking System** - ReclaimAI booking widget for easy meeting scheduling
-- **Contact Form** - Functional contact form with validation
-- **SEO Optimized** - Proper meta tags and semantic HTML structure
-- **Fast Loading** - Optimized images and efficient CSS/JavaScript
+## 🛠️ Technical Details
 
-## 📁 Project Structure
+### Technologies Used
+- **HTML5**: Semantic markup and modern structure
+- **CSS3**: Advanced styling with gradients, animations, and responsive design
+- **JavaScript**: Interactive functionality and form handling
+- **External Integration**: Reclaim.ai meeting scheduler
+
+### Design Features
+- **Color Scheme**: Professional gradient (Purple to Blue)
+- **Typography**: Segoe UI font family for readability
+- **Responsive Grid**: CSS Grid and Flexbox for layout
+- **Hover Effects**: Interactive elements with smooth transitions
+- **Mobile-First**: Responsive design for all screen sizes
+
+### Browser Compatibility
+- Chrome (recommended)
+- Firefox
+- Safari
+- Edge
+- Mobile browsers (iOS Safari, Chrome Mobile)
+
+## 📁 File Structure
 
 ```
-avi-aggarwal-portfolio/
-├── index.html              # Home page
-├── portfolio.html           # Projects and experience showcase
-├── passions.html           # Personal interests and values
-├── contact.html            # Contact information and booking
-├── assets/
-│   ├── style.css           # Main stylesheet
-│   ├── script.js           # Interactive functionality
-│   └── images/
-│       ├── hero-bg.jpg     # Hero section background
-│       ├── engineering-workspace.jpg
-│       └── tech-pattern.jpg
-└── README.md               # This file
+portfolio-website/
+├── index.html          # Home page
+├── portfolio.html      # Portfolio/experience page
+├── passions.html       # Interests and passions page
+├── contact.html        # Contact and booking page
+└── README.md          # This file
 ```
 
-## 🛠️ Technologies Used
+## 🚀 Quick Start
 
-- **HTML5** - Semantic markup and structure
-- **CSS3** - Modern styling with Flexbox and Grid
-- **JavaScript** - Interactive functionality and animations
-- **Google Fonts** - Inter font family for typography
-- **ReclaimAI** - Embedded booking system
+### Option 1: Direct File Opening
+1. Download all HTML files to a folder
+2. Open `index.html` in your web browser
+3. Navigate between pages using the navigation menu
 
-## 📱 Pages Overview
+### Option 2: Local Web Server
+```bash
+# Using Python (recommended for testing)
+python -m http.server 8000
 
-### Home Page (`index.html`)
-- Hero section with professional introduction
-- About Me section with education and current role
-- Core competencies and skills
-- Call-to-action sections
+# Using Node.js
+npx serve .
 
-### Portfolio Page (`portfolio.html`)
-- Current role at Sundyne
-- Detailed engineering projects showcase
-- Teaching and leadership experience
-- Technical skills and certifications
+# Using PHP
+php -S localhost:8000
+```
 
-### Passions Page (`passions.html`)
-- Personal philosophy and values
-- Core interests and motivations
-- Future aspirations and goals
-- Beyond work activities
+Then open `http://localhost:8000` in your browser.
 
-### Contact & Booking Page (`contact.html`)
-- Contact information (email, phone, LinkedIn)
-- Integrated booking widget for meetings
-- Contact form for messages
-- FAQ section
+## 🌐 Deployment Options
 
-## 🚀 Deployment Options
-
-### GitHub Pages (Recommended)
-1. Push this repository to GitHub
-2. Go to repository Settings → Pages
-3. Select "Deploy from a branch" → main branch
-4. Your site will be available at `https://yourusername.github.io/repository-name`
+### GitHub Pages
+1. Create a new repository on GitHub
+2. Upload all HTML files to the repository
+3. Go to Settings > Pages
+4. Select "Deploy from a branch" and choose "main"
+5. Your site will be available at `https://username.github.io/repository-name`
 
 ### Netlify
-1. Connect your GitHub repository to Netlify
-2. Set build command: (leave empty for static sites)
-3. Set publish directory: `/` (root)
-4. Deploy automatically on git push
+1. Drag and drop the folder containing all HTML files to [Netlify Drop](https://app.netlify.com/drop)
+2. Get an instant live URL
+3. Optional: Connect to GitHub for automatic deployments
 
 ### Vercel
-1. Import your GitHub repository to Vercel
-2. Set framework preset to "Other"
-3. Deploy with zero configuration
+1. Install Vercel CLI: `npm i -g vercel`
+2. Run `vercel` in the project directory
+3. Follow the prompts for deployment
 
 ### Traditional Web Hosting
-1. Upload all files to your web hosting provider
+1. Upload all HTML files to your web hosting provider
 2. Ensure `index.html` is in the root directory
-3. Configure your domain to point to the hosting location
+3. Access your domain to view the site
 
-## 🔧 Local Development
+## ⚙️ Customization
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/avi-aggarwal-portfolio.git
-   cd avi-aggarwal-portfolio
+### Adding New Projects to the Carousel
+To add new projects to the horizontal scrolling carousel:
+
+1. **Locate the Projects Section**: Find the `projects-grid` div in `portfolio.html`
+2. **Copy the Project Template**: Duplicate one of the existing project `<a>` elements
+3. **Update Project Information**:
+   ```html
+   <a href="https://www.linkedin.com/in/aviaggarwal05/details/projects/" target="_blank" class="project-item" style="text-decoration: none; color: inherit;">
+       <div class="project-header">
+           <h3>Your Project Title</h3>
+           <div class="project-duration">Start Date - End Date</div>
+       </div>
+       <div class="project-content">
+           <div class="project-description">
+               Your project description here...
+           </div>
+           <div class="skills-tags">
+               <span class="skill-tag">Skill 1</span>
+               <span class="skill-tag">Skill 2</span>
+               <span class="skill-tag">Skill 3</span>
+           </div>
+       </div>
+   </a>
    ```
+4. **No Layout Changes Needed**: The carousel automatically accommodates new projects
+5. **Test Scrolling**: Verify that scroll controls work with the new projects
 
-2. Start a local server:
-   ```bash
-   # Using Python
-   python -m http.server 8000
-   
-   # Using Node.js
-   npx serve .
-   
-   # Using PHP
-   php -S localhost:8000
-   ```
+### Removing Placeholder Projects
+The portfolio currently includes two placeholder projects ("Future Project 1" and "Future Project 2"). To remove them:
+1. Delete the corresponding `<a>` elements from the `projects-grid` div
+2. The carousel will automatically adjust to show only your real projects
 
-3. Open `http://localhost:8000` in your browser
+### Updating Contact Information
+Edit `contact.html` to update:
+- Email address (currently: agrwl.avi@gmail.com)
+- LinkedIn profile URL
+- Location information
+- Current status/position
 
-## ✏️ Customization
+### Modifying Content
+- **Experience**: Update the experience section in `portfolio.html`
+- **Projects**: Add new projects or modify existing ones
+- **Passions**: Edit interests and descriptions in `passions.html`
+- **Personal Info**: Update bio and introduction in `index.html`
 
-### Updating Content
-- Edit HTML files to update text content
-- Modify `assets/style.css` for styling changes
-- Update `assets/script.js` for functionality changes
+### Styling Changes
+All styles are embedded in each HTML file within `<style>` tags. Key customization areas:
+- **Colors**: Modify the gradient values in CSS variables
+- **Fonts**: Change the font-family in the body selector
+- **Layout**: Adjust grid and flexbox properties
+- **Animations**: Modify transition and animation properties
 
-### Changing Colors
-The color scheme is defined in CSS variables in `assets/style.css`:
-```css
-:root {
-    --primary-blue: #2563eb;
-    --dark-blue: #1e40af;
-    --light-blue: #dbeafe;
-    --accent-orange: #f59e0b;
-    /* ... other colors */
-}
-```
+### Meeting Scheduler
+The booking functionality uses Reclaim.ai. To update:
+1. Replace the `data-id` in the script tag in `contact.html`
+2. Update with your own Reclaim.ai scheduling link ID
 
-### Adding New Pages
-1. Create a new HTML file following the existing structure
-2. Add navigation links in all pages
-3. Update the JavaScript for active navigation states
+## 📱 Mobile Responsiveness
 
-## 📞 Contact Information
+The website is fully responsive with:
+- **Breakpoint**: 768px for mobile/tablet transition
+- **Navigation**: Simplified mobile navigation
+- **Grid Layouts**: Responsive grid systems that stack on mobile
+- **Touch-Friendly**: Appropriate button sizes and spacing
+- **Readable Text**: Optimized font sizes for mobile screens
 
-- **Email**: agrwl.avi@gmail.com
-- **Phone**: (908) 842-6294
-- **LinkedIn**: [linkedin.com/in/aviaggarwal05](https://www.linkedin.com/in/aviaggarwal05/)
-- **Location**: Golden, Colorado, United States
+## 🔧 Maintenance
+
+### Regular Updates
+- Update experience and projects as they change
+- Refresh contact information when needed
+- Add new certifications and skills
+- Update the passions section with new interests
+
+### Performance Optimization
+- Images are minimal (using emojis for icons)
+- CSS and JavaScript are embedded (no external dependencies)
+- Optimized for fast loading
+- Minimal HTTP requests
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+**Navigation not working**
+- Ensure all HTML files are in the same directory
+- Check that file names match exactly (case-sensitive)
+
+**Booking widget not loading**
+- Verify internet connection
+- Check that the Reclaim.ai script URL is correct
+- Ensure the data-id is valid
+
+**Email links not working**
+- Verify email client is configured
+- Check that mailto links are properly formatted
+
+**Mobile display issues**
+- Clear browser cache
+- Test in different mobile browsers
+- Verify viewport meta tag is present
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source and available under the [MIT License](https://opensource.org/licenses/MIT).
 
-## 🤝 Contributing
+## 👤 Contact
 
-While this is a personal portfolio, suggestions and improvements are welcome! Please feel free to:
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## 📈 Performance
-
-- **Lighthouse Score**: 95+ (Performance, Accessibility, Best Practices, SEO)
-- **Mobile Friendly**: Fully responsive design
-- **Fast Loading**: Optimized assets and efficient code
-- **Cross-browser Compatible**: Works on all modern browsers
+**Avi Aggarwal**
+- Email: agrwl.avi@gmail.com
+- LinkedIn: [linkedin.com/in/aviaggarwal05](https://www.linkedin.com/in/aviaggarwal05/)
+- Location: Golden, Colorado, United States
 
 ---
 
-**Built with ❤️ for showcasing engineering excellence and professional growth.**
+*Last updated: August 2025*
 
