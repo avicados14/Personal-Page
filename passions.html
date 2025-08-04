@@ -4,248 +4,571 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Passions - Avi Aggarwal</title>
-    <meta name="description" content="Discover Avi Aggarwal's passions including STEM education, innovation, automation, and community involvement.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #667eea;
+        }
+
+        /* Header */
+        .header {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 60px 0;
+        }
+
+        .intro-section {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .intro-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .intro-section p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Passion Categories */
+        .passion-category {
+            margin-bottom: 80px;
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .category-title {
+            font-size: 2.2rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .category-description {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .passion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .passion-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .passion-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .passion-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .passion-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .passion-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .passion-subtitle {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .passion-content {
+            padding: 2rem;
+        }
+
+        .passion-description {
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .passion-highlights {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .passion-highlights h4 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .highlights-list {
+            list-style: none;
+        }
+
+        .highlights-list li {
+            color: #666;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .highlights-list li:before {
+            content: "✓";
+            color: #667eea;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .passion-connection {
+            background: linear-gradient(135deg, #f0f2ff 0%, #e8ebff 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .passion-connection h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .passion-connection p {
+            color: #555;
+            font-style: italic;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .quote-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quote-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .passion-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">Avi Aggarwal</a>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-                <li><a href="passions.html" class="nav-link">Passions</a></li>
-                <li><a href="contact.html" class="nav-link">Contact & Book</a></li>
+    <nav>
+        <div class="container">
+            <div class="logo">Avi Aggarwal</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="passions.html" class="active">Passions</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-            <button class="mobile-menu-btn">☰</button>
         </div>
     </nav>
 
-    <!-- Passions Hero -->
-    <section class="hero" style="height: 60vh; background: linear-gradient(135deg, rgba(245, 158, 11, 0.9), rgba(251, 191, 36, 0.8)), url('assets/images/tech-pattern.jpg');">
-        <div class="hero-content">
+    <!-- Header -->
+    <section class="header">
+        <div class="container">
             <h1>My Passions</h1>
-            <p>What Drives Me Beyond Engineering</p>
+            <p>Exploring the intersection of technology, engineering, and innovation that drives my curiosity and creativity</p>
         </div>
     </section>
 
-    <!-- Core Passions -->
-    <section class="section">
+    <!-- Main Content -->
+    <main class="main-content">
         <div class="container">
-            <h2 class="section-title">What Fuels My Drive</h2>
-            <p class="section-subtitle">The interests and values that shape my approach to engineering and life</p>
-            
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">🚀 Innovation & Automation</h3>
-                    </div>
-                    <div class="card-content">
-                        <p>I'm passionate about leveraging technology to solve complex problems and streamline processes. 
-                        My work at Sundyne has reinforced my belief that automation and data-driven solutions can 
-                        transform traditional engineering workflows, making them more efficient and accurate.</p>
-                        <br>
-                        <p>Whether it's designing Excel workbooks for pump sizing calculations or modernizing database 
-                        interfaces, I find joy in creating tools that empower engineers to work smarter, not harder.</p>
-                    </div>
-                </div>
+            <!-- Introduction -->
+            <section class="intro-section">
+                <h2>What Drives Me</h2>
+                <p>Beyond my academic and professional pursuits, I'm passionate about exploring cutting-edge technologies, understanding complex mechanical systems, and discovering how innovation shapes our world. These interests fuel my creativity and inspire my approach to engineering challenges.</p>
+            </section>
 
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">📚 STEM Education & Mentorship</h3>
-                    </div>
-                    <div class="card-content">
-                        <p>Teaching has always been close to my heart. From tutoring high school calculus to instructing 
-                        drone-focused STEM camps for children ages 6-12, I believe in the power of education to 
-                        inspire the next generation of innovators.</p>
-                        <br>
-                        <p>My experience as a Teaching Assistant at Colorado School of Mines and Mathematics Teacher 
-                        has shown me how personalized instruction and innovative teaching methods can make complex 
-                        concepts accessible and engaging for students of all ages.</p>
-                    </div>
+            <!-- Technology Passions -->
+            <section class="passion-category">
+                <div class="category-header">
+                    <h2 class="category-title">Technology</h2>
+                    <p class="category-description">Fascinated by the digital world and its endless possibilities for innovation and problem-solving</p>
                 </div>
+                <div class="passion-grid">
+                    <div class="passion-card">
+                        <div class="passion-header">
+                            <div class="passion-icon">💻</div>
+                            <h3>Computer Building & Repair</h3>
+                            <p class="passion-subtitle">Hardware Enthusiast</p>
+                        </div>
+                        <div class="passion-content">
+                            <p class="passion-description">
+                                I love diving into the intricate world of computer hardware, from selecting the perfect components for custom builds to troubleshooting complex system issues. There's something deeply satisfying about bringing together processors, graphics cards, and motherboards to create powerful, efficient machines.
+                            </p>
+                            <div class="passion-highlights">
+                                <h4>What I Enjoy:</h4>
+                                <ul class="highlights-list">
+                                    <li>Custom PC builds for gaming and workstations</li>
+                                    <li>Diagnosing and fixing hardware problems</li>
+                                    <li>Staying updated with latest CPU and GPU technologies</li>
+                                    <li>Optimizing system performance and cooling solutions</li>
+                                </ul>
+                            </div>
+                            <div class="passion-connection">
+                                <h4>Engineering Connection:</h4>
+                                <p>This hands-on experience with hardware systems enhances my understanding of mechanical design principles and thermal management in engineering applications.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">🔬 Research & Discovery</h3>
+                    <div class="passion-card">
+                        <div class="passion-header">
+                            <div class="passion-icon">🤖</div>
+                            <h3>Artificial Intelligence</h3>
+                            <p class="passion-subtitle">Future Technology Explorer</p>
+                        </div>
+                        <div class="passion-content">
+                            <p class="passion-description">
+                                AI represents the frontier of technological advancement, and I'm captivated by its potential to revolutionize engineering, automation, and problem-solving. From machine learning algorithms to neural networks, I explore how AI can enhance mechanical engineering processes.
+                            </p>
+                            <div class="passion-highlights">
+                                <h4>Areas of Interest:</h4>
+                                <ul class="highlights-list">
+                                    <li>Machine learning applications in engineering</li>
+                                    <li>AI-driven automation and optimization</li>
+                                    <li>Computer vision for quality control</li>
+                                    <li>Predictive maintenance using AI algorithms</li>
+                                </ul>
+                            </div>
+                            <div class="passion-connection">
+                                <h4>Engineering Connection:</h4>
+                                <p>AI and data analysis skills directly complement my work in compressor engineering, where predictive analytics and automation can significantly improve efficiency and reliability.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <p>I'm driven by curiosity and the desire to push the boundaries of what's possible. 
-                        My involvement in research initiatives, from lube oil reservoir studies to testing protocol 
-                        development, reflects my commitment to advancing engineering knowledge.</p>
-                        <br>
-                        <p>Being a NASA HUNCH Finalist reinforced my passion for space exploration and cutting-edge 
-                        research that can benefit humanity. I believe that today's research questions become 
-                        tomorrow's breakthrough solutions.</p>
-                    </div>
-                </div>
 
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">🤝 Community & Collaboration</h3>
-                    </div>
-                    <div class="card-content">
-                        <p>My work at the YMCA and involvement in the Mines Activity Council has taught me the 
-                        importance of community engagement and collaborative problem-solving. I believe that 
-                        the best engineering solutions emerge from diverse perspectives and teamwork.</p>
-                        <br>
-                        <p>Whether organizing movie nights for fellow students or helping YMCA members achieve 
-                        their fitness goals, I'm passionate about creating positive experiences that bring 
-                        people together and foster growth.</p>
+                    <div class="passion-card">
+                        <div class="passion-header">
+                            <div class="passion-icon">🖨️</div>
+                            <h3>3D Printing</h3>
+                            <p class="passion-subtitle">Digital Manufacturing Pioneer</p>
+                        </div>
+                        <div class="passion-content">
+                            <p class="passion-description">
+                                3D printing bridges the gap between digital design and physical reality. I'm fascinated by additive manufacturing technologies and their potential to revolutionize prototyping, production, and even space exploration. It's incredible how we can transform ideas into tangible objects layer by layer.
+                            </p>
+                            <div class="passion-highlights">
+                                <h4>What Excites Me:</h4>
+                                <ul class="highlights-list">
+                                    <li>Rapid prototyping for engineering projects</li>
+                                    <li>Exploring different printing materials and techniques</li>
+                                    <li>Custom tooling and fixture creation</li>
+                                    <li>Bioprinting and advanced manufacturing applications</li>
+                                </ul>
+                            </div>
+                            <div class="passion-connection">
+                                <h4>Engineering Connection:</h4>
+                                <p>3D printing skills enhance my ability to quickly prototype mechanical components and test design concepts, accelerating the engineering design process.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
+
+            <!-- Mechanical Passions -->
+            <section class="passion-category">
+                <div class="category-header">
+                    <h2 class="category-title">Mechanical</h2>
+                    <p class="category-description">Drawn to the elegance of mechanical systems and the art of precision engineering</p>
+                </div>
+                <div class="passion-grid">
+                    <div class="passion-card">
+                        <div class="passion-header">
+                            <div class="passion-icon">🏎️</div>
+                            <h3>Formula One & Automotive</h3>
+                            <p class="passion-subtitle">Racing Technology Enthusiast</p>
+                        </div>
+                        <div class="passion-content">
+                            <p class="passion-description">
+                                Formula One represents the pinnacle of automotive engineering, where cutting-edge technology meets extreme performance demands. I'm fascinated by the aerodynamics, power unit efficiency, and innovative materials that push the boundaries of what's possible in motorsport.
+                            </p>
+                            <div class="passion-highlights">
+                                <h4>What Captivates Me:</h4>
+                                <ul class="highlights-list">
+                                    <li>Advanced aerodynamic design and CFD analysis</li>
+                                    <li>Hybrid power unit technology and energy recovery</li>
+                                    <li>Lightweight materials and carbon fiber construction</li>
+                                    <li>Real-time data analysis and telemetry systems</li>
+                                </ul>
+                            </div>
+                            <div class="passion-connection">
+                                <h4>Engineering Connection:</h4>
+                                <p>The precision engineering and performance optimization in F1 directly relates to my work in compressor design, where efficiency and reliability are paramount.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="passion-card">
+                        <div class="passion-header">
+                            <div class="passion-icon">🪵</div>
+                            <h3>Woodworking</h3>
+                            <p class="passion-subtitle">Craftsmanship & Precision</p>
+                        </div>
+                        <div class="passion-content">
+                            <p class="passion-description">
+                                Woodworking combines traditional craftsmanship with modern precision tools. I appreciate the tactile nature of working with wood, the importance of precise measurements, and the satisfaction of creating functional, beautiful objects with my hands.
+                            </p>
+                            <div class="passion-highlights">
+                                <h4>Skills I'm Developing:</h4>
+                                <ul class="highlights-list">
+                                    <li>Precision cutting and joinery techniques</li>
+                                    <li>Understanding wood properties and grain patterns</li>
+                                    <li>Tool maintenance and workshop organization</li>
+                                    <li>Project planning and material optimization</li>
+                                </ul>
+                            </div>
+                            <div class="passion-connection">
+                                <h4>Engineering Connection:</h4>
+                                <p>Woodworking teaches patience, precision, and attention to detail – qualities essential in mechanical engineering and manufacturing processes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="passion-card">
+                        <div class="passion-header">
+                            <div class="passion-icon">✈️</div>
+                            <h3>Aircraft</h3>
+                            <p class="passion-subtitle">Aerospace Engineering Marvel</p>
+                        </div>
+                        <div class="passion-content">
+                            <p class="passion-description">
+                                Aircraft represent some of humanity's greatest engineering achievements. I'm amazed by the complex systems that enable flight, from turbine engines and hydraulic systems to advanced avionics and flight control systems.
+                            </p>
+                            <div class="passion-highlights">
+                                <h4>Areas of Fascination:</h4>
+                                <ul class="highlights-list">
+                                    <li>Turbine engine design and thermodynamics</li>
+                                    <li>Aerodynamic principles and wing design</li>
+                                    <li>Flight control systems and automation</li>
+                                    <li>Materials science in aerospace applications</li>
+                                </ul>
+                            </div>
+                            <div class="passion-connection">
+                                <h4>Engineering Connection:</h4>
+                                <p>Aircraft systems share many principles with industrial compressors, including fluid dynamics, thermodynamics, and precision manufacturing requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Other Interests -->
+            <section class="passion-category">
+                <div class="category-header">
+                    <h2 class="category-title">Other Interests</h2>
+                    <p class="category-description">Exploring the broader world of systems, design, and human experiences</p>
+                </div>
+                <div class="passion-grid">
+                    <div class="passion-card">
+                        <div class="passion-header">
+                            <div class="passion-icon">🏗️</div>
+                            <h3>Infrastructure & Transportation</h3>
+                            <p class="passion-subtitle">Systems Thinking</p>
+                        </div>
+                        <div class="passion-content">
+                            <p class="passion-description">
+                                I'm fascinated by the complex systems that keep our modern world functioning – from transportation networks and power grids to water systems and smart cities. These large-scale engineering projects demonstrate the power of systematic thinking and collaborative engineering.
+                            </p>
+                            <div class="passion-highlights">
+                                <h4>What Interests Me:</h4>
+                                <ul class="highlights-list">
+                                    <li>Sustainable transportation solutions</li>
+                                    <li>Smart city technologies and IoT integration</li>
+                                    <li>Infrastructure resilience and maintenance</li>
+                                    <li>Public transit system optimization</li>
+                                </ul>
+                            </div>
+                            <div class="passion-connection">
+                                <h4>Engineering Connection:</h4>
+                                <p>Understanding large-scale systems helps me appreciate how individual components like compressors fit into broader industrial and infrastructure networks.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="passion-card">
+                        <div class="passion-header">
+                            <div class="passion-icon">🌍</div>
+                            <h3>Travel</h3>
+                            <p class="passion-subtitle">Cultural & Technical Exploration</p>
+                        </div>
+                        <div class="passion-content">
+                            <p class="passion-description">
+                                Travel opens my mind to different approaches to engineering, technology, and problem-solving. I love experiencing how different cultures approach design challenges and seeing innovative solutions implemented around the world.
+                            </p>
+                            <div class="passion-highlights">
+                                <h4>What I Seek:</h4>
+                                <ul class="highlights-list">
+                                    <li>Industrial heritage sites and engineering marvels</li>
+                                    <li>Different approaches to sustainable technology</li>
+                                    <li>Cultural perspectives on innovation and design</li>
+                                    <li>International engineering and manufacturing practices</li>
+                                </ul>
+                            </div>
+                            <div class="passion-connection">
+                                <h4>Engineering Connection:</h4>
+                                <p>Exposure to global engineering practices and technologies broadens my perspective and inspires innovative approaches to mechanical engineering challenges.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quote Section -->
+            <section class="quote-section">
+                <div class="container">
+                    <div class="quote-content">
+                        <p class="quote-text">"The best engineers are those who remain curious about the world around them, always asking 'how does this work?' and 'how can we make it better?'"</p>
+                        <p class="quote-author">— My Engineering Philosophy</p>
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
-
-    <!-- Personal Philosophy -->
-    <section class="section" style="background: var(--bg-light);">
-        <div class="container">
-            <h2 class="section-title">My Philosophy</h2>
-            <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <div class="card-content">
-                    <h3 style="color: var(--primary-blue); margin-bottom: 1rem; font-size: 1.5rem;">
-                        "Engineering is not just about solving problems—it's about improving lives."
-                    </h3>
-                    <p style="font-size: 1.125rem; line-height: 1.8;">
-                        Every project I work on, from database optimization to teaching calculus, is guided by 
-                        this principle. I believe that the best engineers are those who combine technical expertise 
-                        with empathy, creativity with precision, and innovation with responsibility.
-                    </p>
-                    <br>
-                    <p style="font-size: 1.125rem; line-height: 1.8;">
-                        My goal is to contribute to a world where technology serves humanity, where complex 
-                        systems are made simple and accessible, and where the next generation is inspired 
-                        to push the boundaries of what's possible.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interests & Hobbies -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Beyond the Classroom & Office</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">🎯 Continuous Learning</h3>
-                    </div>
-                    <div class="card-content">
-                        <p>I'm constantly seeking new knowledge and skills. Whether it's staying current with 
-                        the latest engineering software, exploring new teaching methodologies, or diving deep 
-                        into emerging technologies, I believe that learning never stops.</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">🛠️ Hands-On Projects</h3>
-                    </div>
-                    <div class="card-content">
-                        <p>I love working with my hands and bringing ideas to life. From drone assembly in 
-                        STEM camps to prototyping database interfaces, I find satisfaction in the process 
-                        of building and creating tangible solutions.</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">🌟 Leadership Development</h3>
-                    </div>
-                    <div class="card-content">
-                        <p>Through roles like Movie Night Chair and various teaching positions, I've discovered 
-                        my passion for leadership and team coordination. I enjoy bringing people together 
-                        and creating positive experiences for others.</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">🔍 Problem Solving</h3>
-                    </div>
-                    <div class="card-content">
-                        <p>Whether it's optimizing a database, helping a student understand calculus, or 
-                        improving a manufacturing process, I'm energized by challenges that require 
-                        creative thinking and systematic approaches.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Future Aspirations -->
-    <section class="section" style="background: var(--bg-light);">
-        <div class="container">
-            <h2 class="section-title">Looking Forward</h2>
-            <div class="card-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">Career Goals</h3>
-                        <p class="project-company">Engineering Excellence & Innovation</p>
-                    </div>
-                    <div class="project-content">
-                        <p class="project-description">
-                            I aspire to become a leader in mechanical engineering, specializing in automation 
-                            and data-driven solutions that transform traditional manufacturing processes.
-                        </p>
-                        <ul class="project-highlights">
-                            <li>Lead innovative engineering projects</li>
-                            <li>Develop cutting-edge automation solutions</li>
-                            <li>Mentor the next generation of engineers</li>
-                            <li>Contribute to sustainable manufacturing practices</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">Impact & Legacy</h3>
-                        <p class="project-company">Making a Difference</p>
-                    </div>
-                    <div class="project-content">
-                        <p class="project-description">
-                            I want to be remembered as an engineer who not only solved technical problems 
-                            but also inspired others and contributed to positive change in the world.
-                        </p>
-                        <ul class="project-highlights">
-                            <li>Advance STEM education accessibility</li>
-                            <li>Develop solutions for global challenges</li>
-                            <li>Foster inclusive engineering communities</li>
-                            <li>Bridge the gap between theory and practice</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="section">
-        <div class="container" style="text-align: center;">
-            <h2 class="section-title">Share the Journey</h2>
-            <p class="section-subtitle">If my passions resonate with you, I'd love to connect and explore how we can collaborate or learn from each other.</p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="contact.html" class="cta-button">Let's Connect</a>
-                <a href="portfolio.html" class="cta-button" style="background: var(--primary-blue);">View My Work</a>
-            </div>
-        </div>
-    </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
             <p>&copy; 2025 Avi Aggarwal. All rights reserved.</p>
-            <p>Mechanical Engineer | Colorado School of Mines</p>
         </div>
     </footer>
-
-    <script src="assets/script.js"></script>
 </body>
 </html>
 

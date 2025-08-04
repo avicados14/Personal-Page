@@ -4,317 +4,595 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Avi Aggarwal</title>
-    <meta name="description" content="Explore Avi Aggarwal's engineering projects, internship experience, and professional achievements in mechanical engineering and automation.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #667eea;
+        }
+
+        /* Header */
+        .header {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 60px 0;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Experience Section */
+        .experience-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .experience-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .experience-title {
+            flex: 1;
+        }
+
+        .experience-title h3 {
+            font-size: 1.5rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-title .company {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 0.25rem;
+        }
+
+        .experience-title .location {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .experience-duration {
+            background: #667eea;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .experience-description {
+            margin: 1rem 0;
+            color: #555;
+        }
+
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            background: #f0f2ff;
+            color: #667eea;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .education-item h3 {
+            font-size: 1.5rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .degree {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-details {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .activities {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        .activities h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .project-header h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-duration {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-description {
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        /* Certifications Section */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .certification-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .certification-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .certification-item h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .certification-org {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .certification-details {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .experience-duration {
+                margin-top: 0.5rem;
+            }
+
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">Avi Aggarwal</a>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-                <li><a href="passions.html" class="nav-link">Passions</a></li>
-                <li><a href="contact.html" class="nav-link">Contact & Book</a></li>
+    <nav>
+        <div class="container">
+            <div class="logo">Avi Aggarwal</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="passions.html">Passions</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-            <button class="mobile-menu-btn">☰</button>
         </div>
     </nav>
 
-    <!-- Portfolio Hero -->
-    <section class="hero" style="height: 60vh; background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(59, 130, 246, 0.8)), url('assets/images/engineering-workspace.jpg');">
-        <div class="hero-content">
+    <!-- Header -->
+    <section class="header">
+        <div class="container">
             <h1>My Portfolio</h1>
-            <p>Engineering Projects & Professional Experience</p>
+            <p>Experience, Education, Projects & Achievements</p>
         </div>
     </section>
 
-    <!-- Current Role -->
-    <section class="section">
+    <!-- Main Content -->
+    <main class="main-content">
         <div class="container">
-            <h2 class="section-title">Current Role</h2>
-            <div class="project-card" style="max-width: 900px; margin: 0 auto;">
-                <div class="project-header">
-                    <h3 class="project-title">Compressors Engineering Intern</h3>
-                    <p class="project-company">Sundyne | June 2025 - Present</p>
+            <!-- Experience Section -->
+            <section class="section">
+                <h2>Professional Experience</h2>
+                <div class="experience-grid">
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">
+                                <h3>Compressors Engineering Intern</h3>
+                                <div class="company">Sundyne</div>
+                                <div class="location">Arvada, Colorado, United States - On-site</div>
+                            </div>
+                            <div class="experience-duration">Jun 2025 - Present</div>
+                        </div>
+                        <div class="experience-description">
+                            Improved Testing Database Integrity: Integrated previously untracked compressor projects into the central testing database, enhancing data coverage and ensuring complete, accurate testing records.
+                        </div>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Data Entry</span>
+                            <span class="skill-tag">Item Master</span>
+                            <span class="skill-tag">Database Management</span>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">
+                                <h3>Mathematics Teacher</h3>
+                                <div class="company">Smart Math Tutoring</div>
+                                <div class="location">Plano, Texas, United States - On-site</div>
+                            </div>
+                            <div class="experience-duration">Mar 2025 - Jun 2025</div>
+                        </div>
+                        <div class="experience-description">
+                            Taught high school-level Algebra II, Pre-Calculus, and AP Calculus to students. Created and updated worksheets and teaching materials to increase student engagement.
+                        </div>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Mathematics Education</span>
+                            <span class="skill-tag">Microsoft Office</span>
+                            <span class="skill-tag">Teaching</span>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">
+                                <h3>Teaching Assistant</h3>
+                                <div class="company">Colorado School of Mines</div>
+                                <div class="location">Golden, Colorado, United States - On-site</div>
+                            </div>
+                            <div class="experience-duration">Aug 2024 - Jan 2025</div>
+                        </div>
+                        <div class="experience-description">
+                            Support undergraduate students in program development and logic comprehension through office hours, skill/concept understanding, and test preparedness.
+                        </div>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Python Programming</span>
+                            <span class="skill-tag">Technical Support</span>
+                            <span class="skill-tag">Mentoring</span>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">
+                                <h3>Mines Activity Council Movie Night Chair</h3>
+                                <div class="company">Colorado School of Mines - SAIL Office</div>
+                                <div class="location">Golden, Colorado, United States - On-site</div>
+                            </div>
+                            <div class="experience-duration">Apr 2024 - Jan 2025</div>
+                        </div>
+                        <div class="experience-description">
+                            Led the organization and execution of movie night events for the student community, demonstrating leadership and event management skills.
+                        </div>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Leadership</span>
+                            <span class="skill-tag">Collaborative Leadership</span>
+                            <span class="skill-tag">Event Management</span>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">
+                                <h3>Summer Camp Instructor</h3>
+                                <div class="company">DroneTogether</div>
+                                <div class="location">Allen, Texas, United States - On-site</div>
+                            </div>
+                            <div class="experience-duration">May 2024 - Aug 2024</div>
+                        </div>
+                        <div class="experience-description">
+                            Created and Taught Drone-Focused STEM Curriculum: Developed and delivered a comprehensive STEM camp centered around drone technology, engaging children ages 6-12.
+                        </div>
+                        <div class="skills-tags">
+                            <span class="skill-tag">STEM Education</span>
+                            <span class="skill-tag">Curriculum Development</span>
+                            <span class="skill-tag">Drone Technology</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-content">
-                    <p class="project-description">
-                        Working at Sundyne, a leading manufacturer of pumps and compressors for critical applications. 
-                        Focused on database optimization, testing protocols, and analytical tool development to streamline 
-                        engineering workflows and improve data integrity across complex compressor systems.
-                    </p>
+            </section>
+
+            <!-- Education Section -->
+            <section class="section">
+                <h2>Education</h2>
+                <div class="education-grid">
+                    <div class="education-item">
+                        <h3>Colorado School of Mines</h3>
+                        <div class="degree">Bachelor of Science - Mechanical Engineering</div>
+                        <div class="education-details">
+                            <strong>Duration:</strong> Aug 2023 - May 2027<br>
+                            <strong>Grade:</strong> Sophomore
+                        </div>
+                        <div class="activities">
+                            <h4>Activities & Societies:</h4>
+                            <p>Mines Activity Council: Movie Night Chair | Mines Marching Band | Mines Maker Society | Society of Asian Scientists and Engineers</p>
+                        </div>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Problem Solving</span>
+                            <span class="skill-tag">Python Programming</span>
+                            <span class="skill-tag">SOLIDWORKS</span>
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <h3>Allen High School</h3>
+                        <div class="degree">High School Diploma</div>
+                        <div class="education-details">
+                            <strong>Duration:</strong> Aug 2019 - May 2023<br>
+                            <strong>Achievement:</strong> Top 25% of graduating class with STEM, Fine Arts and Humanities Endorsements
+                        </div>
+                        <div class="activities">
+                            <h4>Activities & Societies:</h4>
+                            <p>Marching Band, FTC & FRC Robotics</p>
+                        </div>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Problem Solving</span>
+                            <span class="skill-tag">Python Programming</span>
+                            <span class="skill-tag">Robotics</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section class="section">
+                <h2>Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-item">
+                        <div class="project-header">
+                            <h3>Arduino Fingerprint Lockbox</h3>
+                            <div class="project-duration">Nov 2024 - Dec 2024</div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-description">
+                                As part of the Introduction to Mechanical Engineering: Programming and Hardware Interface (MEGN200) course at the Colorado School of Mines, I collaborated on designing and fabricating a functional lockbox with fingerprint authentication.
+                            </div>
+                            <div class="skills-tags">
+                                <span class="skill-tag">Arduino</span>
+                                <span class="skill-tag">Computer-Aided Design (CAD)</span>
+                                <span class="skill-tag">Hardware Interface</span>
+                                <span class="skill-tag">Programming</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-header">
+                            <h3>Derby Car Design and Fabrication</h3>
+                            <div class="project-duration">Sep 2024 - Dec 2024</div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-description">
+                                As part of the Introduction to Mechanical Engineering: Design & Fabrication (MEGN201) course at the Colorado School of Mines, I worked with a team to design and fabricate a metal derby car, focusing on aerodynamics and performance optimization.
+                            </div>
+                            <div class="skills-tags">
+                                <span class="skill-tag">Computer-Aided Design (CAD)</span>
+                                <span class="skill-tag">Machining</span>
+                                <span class="skill-tag">Manufacturing</span>
+                                <span class="skill-tag">Team Collaboration</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certifications Section -->
+            <section class="section">
+                <h2>Licenses & Certifications</h2>
+                <div class="certifications-grid">
+                    <div class="certification-item">
+                        <div class="certification-icon">🏥</div>
+                        <h3>Standard First Aid, CPR and AED</h3>
+                        <div class="certification-org">National CPR Foundation</div>
+                        <div class="certification-details">
+                            Issued: Jul 2024 | Expires: Jul 2028<br>
+                            Credential ID: C498228
+                        </div>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Adult CPR</span>
+                            <span class="skill-tag">Pediatric CPR</span>
+                            <span class="skill-tag">First Aid</span>
+                        </div>
+                    </div>
+
+                    <div class="certification-item">
+                        <div class="certification-icon">🔧</div>
+                        <h3>Solid Edge Associate Level Certification</h3>
+                        <div class="certification-org">Siemens</div>
+                        <div class="certification-details">
+                            Issued: Apr 2022<br>
+                            Credential ID: 6907-164-969-9966
+                        </div>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Creative Problem Solving</span>
+                            <span class="skill-tag">CAD Design</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
-
-    <!-- Engineering Projects -->
-    <section class="section" style="background: var(--bg-light);">
-        <div class="container">
-            <h2 class="section-title">Engineering Projects</h2>
-            <p class="section-subtitle">Key projects and achievements from my internship at Sundyne</p>
-            
-            <div class="card-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">Testing Database Optimization</h3>
-                        <p class="project-company">Database Integration & Data Integrity</p>
-                    </div>
-                    <div class="project-content">
-                        <p class="project-description">
-                            Integrated previously untracked compressor projects into the central testing database, 
-                            significantly enhancing data coverage and ensuring complete, accurate test record retention.
-                        </p>
-                        <ul class="project-highlights">
-                            <li>Enhanced data coverage across all compressor projects</li>
-                            <li>Improved test record retention and accuracy</li>
-                            <li>Streamlined data access for engineering teams</li>
-                            <li>Established comprehensive tracking protocols</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">Internal Tools Redesign</h3>
-                        <p class="project-company">UI/UX & Backend Development</p>
-                    </div>
-                    <div class="project-content">
-                        <p class="project-description">
-                            Proposed and prototyped a modernized UI and backend structure for the internal testing database, 
-                            minimizing data inconsistencies and significantly streamlining engineering workflows.
-                        </p>
-                        <ul class="project-highlights">
-                            <li>Modernized user interface design</li>
-                            <li>Optimized backend database structure</li>
-                            <li>Reduced data inconsistencies by 40%</li>
-                            <li>Improved workflow efficiency for engineers</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">Impeller Design Database</h3>
-                        <p class="project-company">Engineering Workflow Acceleration</p>
-                    </div>
-                    <div class="project-content">
-                        <p class="project-description">
-                            Collaborated with the applications engineering team to finalize an impeller design database, 
-                            enabling faster project sizing and reducing turnaround time for engineering evaluations.
-                        </p>
-                        <ul class="project-highlights">
-                            <li>Accelerated project sizing processes</li>
-                            <li>Reduced engineering evaluation turnaround time</li>
-                            <li>Enhanced collaboration between teams</li>
-                            <li>Standardized impeller design parameters</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">Lube Oil Reservoir Research</h3>
-                        <p class="project-company">Research & Testing Protocol Development</p>
-                    </div>
-                    <div class="project-content">
-                        <p class="project-description">
-                            Supported a research initiative on lube oil reservoirs for complex compressor designs. 
-                            Developed detailed testing protocols and coordinated logistics for comprehensive data acquisition.
-                        </p>
-                        <ul class="project-highlights">
-                            <li>Developed comprehensive testing protocols</li>
-                            <li>Coordinated component selection and sourcing</li>
-                            <li>Managed test stand development logistics</li>
-                            <li>Ensured comprehensive data acquisition methods</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">Pump Sizing Automation</h3>
-                        <p class="project-company">Analytical Tool Development</p>
-                    </div>
-                    <div class="project-content">
-                        <p class="project-description">
-                            Designed Excel workbooks to automate and accelerate the generation of pump sizing curves, 
-                            including stagnation and dead head pressure calculations, enhancing accuracy and decision-making speed.
-                        </p>
-                        <ul class="project-highlights">
-                            <li>Automated pump sizing curve generation</li>
-                            <li>Implemented stagnation pressure calculations</li>
-                            <li>Enhanced calculation accuracy and speed</li>
-                            <li>Improved engineering decision-making process</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">Part Database Enhancement</h3>
-                        <p class="project-company">Procurement Process Optimization</p>
-                    </div>
-                    <div class="project-content">
-                        <p class="project-description">
-                            Created new item masters in the internal part database, streamlining procurement processes 
-                            and ensuring traceability for both custom and standard components.
-                        </p>
-                        <ul class="project-highlights">
-                            <li>Streamlined procurement processes</li>
-                            <li>Enhanced component traceability</li>
-                            <li>Standardized item master creation</li>
-                            <li>Improved inventory management</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Teaching & Leadership Experience -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Teaching & Leadership Experience</h2>
-            <p class="section-subtitle">Educational roles and mentorship experience</p>
-            
-            <div class="card-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">Mathematics Teacher</h3>
-                        <p class="project-company">Smart Math Tutoring | March 2025 - June 2025</p>
-                    </div>
-                    <div class="project-content">
-                        <p class="project-description">
-                            Taught high school-level mathematics including Algebra II, Pre-Calculus, and AP Calculus. 
-                            Developed innovative teaching methods and modernized scheduling systems.
-                        </p>
-                        <ul class="project-highlights">
-                            <li>Taught Algebra II, Pre-Calculus, and AP Calculus</li>
-                            <li>Created engaging worksheets and teaching materials</li>
-                            <li>Modernized scheduling system for improved efficiency</li>
-                            <li>Developed novel instructional methods</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">Teaching Assistant</h3>
-                        <p class="project-company">Colorado School of Mines | August 2024 - January 2025</p>
-                    </div>
-                    <div class="project-content">
-                        <p class="project-description">
-                            Supported undergraduate students in program development and logic comprehension through 
-                            office hours, skill development, and test preparation assistance.
-                        </p>
-                        <ul class="project-highlights">
-                            <li>Conducted regular office hours for student support</li>
-                            <li>Assisted with program development concepts</li>
-                            <li>Helped students with logic comprehension</li>
-                            <li>Provided test preparation guidance</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">STEM Camp Instructor</h3>
-                        <p class="project-company">DroneTogether | May 2024 - August 2024</p>
-                    </div>
-                    <div class="project-content">
-                        <p class="project-description">
-                            Developed and delivered a comprehensive STEM camp centered around drone technology 
-                            for children ages 6-12, fostering enthusiasm for STEM fields.
-                        </p>
-                        <ul class="project-highlights">
-                            <li>Created drone-focused STEM curriculum</li>
-                            <li>Designed interactive learning activities</li>
-                            <li>Fostered collaborative learning environment</li>
-                            <li>Adapted teaching methods for diverse age groups</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills & Technologies -->
-    <section class="section" style="background: var(--bg-light);">
-        <div class="container">
-            <h2 class="section-title">Technical Skills & Tools</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">🔧 Engineering Tools</h3>
-                    </div>
-                    <div class="card-content">
-                        <ul class="project-highlights">
-                            <li>Solid Edge CAD (Associate Level Certified)</li>
-                            <li>Excel Advanced Analytics & Automation</li>
-                            <li>Database Design & Management</li>
-                            <li>Testing Protocol Development</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">📊 Data & Analysis</h3>
-                    </div>
-                    <div class="card-content">
-                        <ul class="project-highlights">
-                            <li>Data Analysis & Visualization</li>
-                            <li>Statistical Modeling</li>
-                            <li>Process Optimization</li>
-                            <li>Quality Control Systems</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">🎓 Certifications</h3>
-                    </div>
-                    <div class="card-content">
-                        <ul class="project-highlights">
-                            <li>Standard First Aid, CPR and AED</li>
-                            <li>30-Hour General Industry Safety and Health</li>
-                            <li>Solid Edge Associate Level Certification</li>
-                            <li>AP Scholar with Distinction</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="section">
-        <div class="container" style="text-align: center;">
-            <h2 class="section-title">Interested in My Work?</h2>
-            <p class="section-subtitle">Let's discuss how my engineering experience and passion for innovation can contribute to your next project.</p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="contact.html" class="cta-button">Get In Touch</a>
-                <a href="passions.html" class="cta-button" style="background: var(--primary-blue);">Learn About My Passions</a>
-            </div>
-        </div>
-    </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
             <p>&copy; 2025 Avi Aggarwal. All rights reserved.</p>
-            <p>Mechanical Engineer | Colorado School of Mines</p>
         </div>
     </footer>
-
-    <script src="assets/script.js"></script>
 </body>
 </html>
 
