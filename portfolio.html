@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Avi Aggarwal</title>
-    <style>
+      <style>
         * {
             margin: 0;
             padding: 0;
@@ -14,8 +14,9 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
+            color: #252422;
+            background: linear-gradient(135deg, #e8f9fd 0%, #f0fcff 100%);
+            min-height: 100vh;
         }
 
         .container {
@@ -26,12 +27,12 @@
 
         /* Navigation */
         nav {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(89, 206, 143, 0.95);
             backdrop-filter: blur(10px);
             padding: 1rem 0;
             position: fixed;
-            width: 100%;
             top: 0;
+            width: 100%;
             z-index: 1000;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
         }
@@ -45,7 +46,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #667eea;
+            color: white;
         }
 
         .nav-links {
@@ -56,26 +57,92 @@
 
         .nav-links a {
             text-decoration: none;
-            color: #333;
+            color: white;
             font-weight: 500;
             transition: color 0.3s ease;
+            position: relative;
         }
 
-        .nav-links a:hover, .nav-links a.active {
-            color: #667eea;
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #ff1e00;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ff1e00;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: rgba(89, 206, 143, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 1rem 0;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 1rem 2rem;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .mobile-menu a:hover,
+        .mobile-menu a.active {
+            background-color: rgba(255, 30, 0, 0.2);
+            color: #ff1e00;
         }
 
         /* Header */
         .header {
-            padding: 120px 0 60px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #ff1e00 0%, #59ce8f 100%);
             color: white;
             text-align: center;
+            padding: 120px 0 80px;
+            margin-top: 80px;
         }
 
         .header h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
+            font-weight: 700;
         }
 
         .header p {
@@ -93,10 +160,23 @@
         }
 
         .section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #333;
             text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #ff1e00;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff1e00, #59ce8f);
+            border-radius: 2px;
         }
 
         /* Experience Section */
@@ -132,27 +212,28 @@
 
         .experience-title h3 {
             font-size: 1.5rem;
-            color: #667eea;
+            color: #ff1e00;
             margin-bottom: 0.5rem;
         }
 
-        .experience-title .company {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 0.25rem;
+        .company {
+            font-weight: 600;
+            color: #59ce8f;
+            margin-bottom: 0.3rem;
         }
 
-        .experience-title .location {
+        .location {
+            color: #666;
             font-size: 0.9rem;
-            color: #888;
         }
 
         .experience-duration {
-            background: #667eea;
+            background: linear-gradient(135deg, #ff1e00, #59ce8f);
             color: white;
             padding: 0.5rem 1rem;
-            border-radius: 25px;
+            border-radius: 20px;
             font-size: 0.9rem;
+            font-weight: 500;
             white-space: nowrap;
         }
 
@@ -431,6 +512,15 @@
                 <li><a href="passions.html">Passions</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <div class="mobile-menu" id="mobileMenu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="passions.html">Passions</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -849,6 +939,22 @@
                     e.preventDefault();
                     scrollProjects('right');
                 }
+            }
+        });
+
+        // Mobile menu toggle function
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                mobileMenu.classList.remove('active');
             }
         });
     </script>
