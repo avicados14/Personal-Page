@@ -416,6 +416,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="passions.html">Passions</a></li>
+                <li><a href="resume.html">Resume</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
@@ -424,6 +425,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="passions.html">Passions</a></li>
+                    <li><a href="resume.html">Resume</a></li>
                     <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
             </div>
@@ -454,7 +456,23 @@
                             <div class="contact-icon">📧</div>
                             <div class="contact-details">
                                 <h3>Email</h3>
-                                <p><a href="mailto:agrwl.avi@gmail.com">agrwl.avi@gmail.com</a></p>
+                                <p><a href="mailto:avi_aggarwal@mines.edu">avi_aggarwal@mines.edu</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-details">
+                                <h3>Phone</h3>
+                                <p><a href="tel:9088426294">(908) 842-6294</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">🌐</div>
+                            <div class="contact-details">
+                                <h3>Website</h3>
+                                <p><a href="https://www.aviaggarwal.me" target="_blank">www.aviaggarwal.me</a></p>
                             </div>
                         </div>
 
@@ -571,7 +589,7 @@
             const message = formData.get('message');
             
             // Create mailto link
-            const mailtoLink = `mailto:agrwl.avi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+            const mailtoLink = `mailto:avi_aggarwal@mines.edu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
             
             // Open email client
             window.location.href = mailtoLink;

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Avi Aggarwal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2C3E50;
+            background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(52, 152, 219, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #E91E63;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #E91E63;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: rgba(52, 152, 219, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 1rem 0;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 1rem 2rem;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .mobile-menu a:hover,
+        .mobile-menu a.active {
+            background-color: rgba(233, 30, 99, 0.2);
+            color: #E91E63;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #3498DB 0%, #E91E63 100%);
+            color: white;
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Resume Content */
+        .resume-content {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .resume-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .resume-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #E91E63;
+        }
+
+        .resume-header h1 {
+            font-size: 2.5rem;
+            color: #2C3E50;
+            margin-bottom: 10px;
+        }
+
+        .resume-header .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            color: #3498DB;
+            font-weight: 500;
+        }
+
+        .resume-section {
+            margin-bottom: 30px;
+        }
+
+        .resume-section h2 {
+            color: #3498DB;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #E91E63;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .education-item,
+        .experience-item {
+            margin-bottom: 20px;
+        }
+
+        .education-item h3,
+        .experience-item h3 {
+            color: #2C3E50;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .education-item .details,
+        .experience-item .details {
+            color: #E91E63;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .education-item .honors,
+        .experience-item .description {
+            color: #2C3E50;
+            margin-bottom: 10px;
+        }
+
+        .coursework-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .coursework-item {
+            background: #F8F9FA;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            border-left: 3px solid #E91E63;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category h4 {
+            color: #E91E63;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            background: #F8F9FA;
+            padding: 5px 10px;
+            margin-bottom: 5px;
+            border-radius: 3px;
+            border-left: 2px solid #3498DB;
+        }
+
+        .activities-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .activity-item {
+            background: #F8F9FA;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #E91E63;
+        }
+
+        .activity-item h4 {
+            color: #3498DB;
+            margin-bottom: 5px;
+        }
+
+        /* Download Button */
+        .download-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #E91E63 0%, #3498DB 100%);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(233, 30, 99, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #2C3E50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .resume-container {
+                padding: 20px;
+                margin: 0 10px;
+            }
+
+            .resume-header .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .coursework-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Avi Aggarwal</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="passions.html">Passions</a></li>
+                <li><a href="resume.html" class="active">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <div class="mobile-menu" id="mobileMenu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="passions.html">Passions</a></li>
+                    <li><a href="resume.html" class="active">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="header">
+        <div class="container">
+            <h1>Resume</h1>
+            <p>Mechanical Engineering Student & Innovation Enthusiast</p>
+        </div>
+    </section>
+
+    <!-- Resume Content -->
+    <section class="resume-content">
+        <div class="container">
+            <div class="resume-container">
+                <!-- Header -->
+                <div class="resume-header">
+                    <h1>Avi Aggarwal</h1>
+                    <div class="contact-info">
+                        <span>avi_aggarwal@mines.edu</span>
+                        <span>|</span>
+                        <span>(908) 842-6294</span>
+                        <span>|</span>
+                        <span>www.aviaggarwal.me</span>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="resume-section">
+                    <h2>Education</h2>
+                    <div class="education-item">
+                        <h3>Colorado School of Mines, Golden, CO</h3>
+                        <div class="details">B.S. Mechanical Engineering | May 2027</div>
+                        <div class="honors">Honors and Awards: Oredigger Leadership Community</div>
+                    </div>
+                    <div class="education-item">
+                        <h3>Allen High School, Allen, TX</h3>
+                        <div class="details">High School Diploma with STEM Endorsement | May 2023</div>
+                        <div class="honors">Honors and Awards: Boeing STEM Scholar, NASA HUNCH Finalist</div>
+                    </div>
+                </div>
+
+                <!-- Coursework -->
+                <div class="resume-section">
+                    <h2>Completed/Current Coursework</h2>
+                    <div class="coursework-grid">
+                        <div class="coursework-item">MATH223 Calculus III Honors</div>
+                        <div class="coursework-item">MATH225 Differential Equations</div>
+                        <div class="coursework-item">MATH 307 Introduction to Scientific Computing</div>
+                        <div class="coursework-item">CSCI128 Computer Science for STEM</div>
+                        <div class="coursework-item">CSCI200 Foundational Programming Concepts & Design</div>
+                        <div class="coursework-item">EDNS151 Cornerstone Design</div>
+                        <div class="coursework-item">MEGN200 Programming and Hardware Interface</div>
+                        <div class="coursework-item">MEGN201 Design and Fabrication</div>
+                        <div class="coursework-item">PHGN200 Physics II-Electromagnetism and Optics</div>
+                        <div class="coursework-item">CEEN241 Statics</div>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="resume-section">
+                    <h2>Engineering and Technical Skills</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Technologies</h4>
+                            <ul>
+                                <li>SolidWorks</li>
+                                <li>Microsoft Office</li>
+                                <li>3D Printing</li>
+                                <li>Python</li>
+                                <li>C++</li>
+                                <li>Arduino</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Certifications</h4>
+                            <ul>
+                                <li>OSHA 30-Hour General Industry Safety and Health</li>
+                                <li>Solid Edge Associate Level</li>
+                                <li>CPR</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Professional</h4>
+                            <ul>
+                                <li>Machine Shop Experience</li>
+                                <li>Problem Solving</li>
+                                <li>Public Speaking</li>
+                                <li>Management</li>
+                                <li>Leadership</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <div class="resume-section">
+                    <h2>Relevant Experience</h2>
+                    
+                    <div class="experience-item">
+                        <h3>Compressor Engineering Intern</h3>
+                        <div class="details">Sundyne, Arvada, CO</div>
+                        <div class="description">
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>Designed and demoed a new Compressor Test Database, improving usability and accuracy.</li>
+                                <li>Contributed to the EPR 1451 LO Vortex Study through test stand design, load calculations, pump sizing, and part sourcing.</li>
+                                <li>Built organized Inducer and Pump Case databases to streamline sizing and analysis requests.</li>
+                                <li>Created Item Masters in JDE and applied P&ID interpretation to support engineering workflows.</li>
+                                <li>Collaborated across teams to strengthen technical expertise in compressors, fluid mechanics, and machine design.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <h3>School Projects</h3>
+                        <div class="details">Colorado School of Mines, Golden, CO</div>
+                        <div class="description">
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li><strong>Arduino Lockbox (MEGN200):</strong> Programmed and integrated a fingerprint sensor with an Arduino microcontroller to create a biometric security system; developed circuitry, wiring, and code logic for lock control. Also modeled overall housing for electrical components using SolidWorks.</li>
+                                <li><strong>Derby Car (MEGN201):</strong> Produced detailed GD&T drawings and performed tolerance stack-up analysis; fabricated and assembled components; tested performance against design specifications and validated compliance.</li>
+                                <li><strong>Suitcase Redesign (EDNS151):</strong> Applied CAD modeling and rapid prototyping to redesign a suitcase for improved usability; developed a mobile app in support of product functionality; contributed to design evaluation and iteration.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <h3>Mines Activities Council</h3>
+                        <div class="details">Colorado School of Mines, Golden, CO</div>
+                        <div class="description">
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li><strong>E-Days Planning Committee:</strong> Organized vendors and booths for a carnival; worked with a team of faculty and students to put together an event.</li>
+                                <li><strong>Movie Night Chair:</strong> Interviewed and joined the committee as 2024-2025 Movie Night Chair; work with a movie licensing company to get permission to show movies on campus; manage budget and work with a team to put on large events on campus; organizes vendors for events and manages quotes; created a new budget management system and assists with bugs and questions.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <h3>Computer Science Teaching Assistant</h3>
+                        <div class="details">Colorado School of Mines, Golden, CO</div>
+                        <div class="description">
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>Works with professors to create grading rubrics for assignments</li>
+                                <li>Assists students with Python-based programming and code reviews</li>
+                                <li>Holds office hours where students can come and ask questions</li>
+                                <li>Helps write assignments for students and ensures that they target key topics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activities -->
+                <div class="resume-section">
+                    <h2>Activities</h2>
+                    <div class="activities-list">
+                        <div class="activity-item">
+                            <h4>American Society of Mechanical Engineers (ASME)</h4>
+                        </div>
+                        <div class="activity-item">
+                            <h4>Society of Asian Scientists and Engineers (SASE)</h4>
+                        </div>
+                        <div class="activity-item">
+                            <h4>Mines Marching Band</h4>
+                        </div>
+                        <div class="activity-item">
+                            <h4>South Asian Student Association at Mines (SASA)</h4>
+                        </div>
+                        <div class="activity-item">
+                            <h4>Mines Maker Society</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Download Section -->
+                <div class="download-section">
+                    <a href="ResumeNew.pdf" class="download-btn" download>📄 Download PDF Resume</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Avi Aggarwal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle function
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
+
