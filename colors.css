@@ -1,0 +1,75 @@
+/* Professional Color Scheme for Avi Aggarwal Website */
+/* Based on 2024 color trends research and professional portfolio best practices */
+
+:root {
+    /* Primary Colors - Professional Blues */
+    --primary-dark: #1a365d;        /* Deep navy for headers and important elements */
+    --primary-main: #2c5282;        /* Main blue for navigation and accents */
+    --primary-light: #3182ce;       /* Lighter blue for hover states */
+    --primary-lighter: #4299e1;     /* Light blue for backgrounds */
+
+    /* Secondary Colors - Sophisticated Pinks */
+    --secondary-main: #d53f8c;      /* Professional pink for accents */
+    --secondary-light: #ed64a6;     /* Lighter pink for hover states */
+    --secondary-lighter: #f687b3;   /* Very light pink for subtle accents */
+    --secondary-pale: #fed7e2;      /* Pale pink for backgrounds */
+
+    /* Neutral Colors */
+    --neutral-white: #ffffff;
+    --neutral-gray-50: #f7fafc;
+    --neutral-gray-100: #edf2f7;
+    --neutral-gray-200: #e2e8f0;
+    --neutral-gray-300: #cbd5e0;
+    --neutral-gray-400: #a0aec0;
+    --neutral-gray-500: #718096;
+    --neutral-gray-600: #4a5568;
+    --neutral-gray-700: #2d3748;
+    --neutral-gray-800: #1a202c;
+    --neutral-gray-900: #171923;
+
+    /* Accent Colors - Nature Inspired */
+    --accent-green: #38a169;        /* Professional green for success states */
+    --accent-green-light: #48bb78;  /* Lighter green */
+    --accent-orange: #dd6b20;       /* Warm orange for highlights */
+    --accent-orange-light: #ed8936; /* Lighter orange */
+
+    /* Gradient Combinations */
+    --gradient-primary: linear-gradient(135deg, var(--primary-main) 0%, var(--secondary-main) 100%);
+    --gradient-hero: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-main) 50%, var(--secondary-main) 100%);
+    --gradient-subtle: linear-gradient(135deg, var(--neutral-gray-50) 0%, var(--secondary-pale) 100%);
+
+    /* Text Colors */
+    --text-primary: var(--neutral-gray-900);
+    --text-secondary: var(--neutral-gray-700);
+    --text-muted: var(--neutral-gray-500);
+    --text-inverse: var(--neutral-white);
+
+    /* Background Colors */
+    --bg-primary: var(--neutral-white);
+    --bg-secondary: var(--neutral-gray-50);
+    --bg-accent: var(--secondary-pale);
+
+    /* Border Colors */
+    --border-light: var(--neutral-gray-200);
+    --border-medium: var(--neutral-gray-300);
+    --border-accent: var(--secondary-light);
+
+    /* Shadow Colors */
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --shadow-heavy: rgba(0, 0, 0, 0.25);
+    --shadow-colored: rgba(45, 82, 130, 0.15);
+}
+
+/* Professional Color Usage Guidelines */
+/*
+Primary Blue (#2c5282): Use for navigation, main buttons, headings
+Secondary Pink (#d53f8c): Use for accents, hover states, call-to-action elements
+Neutral Grays: Use for text, backgrounds, borders
+Accent Colors: Use sparingly for highlights and status indicators
+
+Gradient Usage:
+- Hero sections: --gradient-hero
+- Buttons and CTAs: --gradient-primary  
+- Subtle backgrounds: --gradient-subtle
+*/
