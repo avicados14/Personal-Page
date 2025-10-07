@@ -16,16 +16,22 @@ Visit the live site at: [www.aviaggarwal.me](https://www.aviaggarwal.me)
 ## 📁 Project Structure
 
 ```
-├── index.html              # Home page
-├── resume.html             # Resume with dynamic animations
-├── portfolio.html          # Project portfolio with filtering
-├── passions.html           # Personal interests and hobbies
-├── contact.html            # Contact information and form
-├── colors.css              # Professional color scheme variables
-├── sundyne_logo.png        # Sundyne company logo
-├── csm_logo.jpg            # Colorado School of Mines logo
-├── Resume.pdf           # Downloadable PDF resume
-└── README.md               # This file
+├── index.html                  # Home page
+├── resume.html                 # Resume with dynamic animations
+├── portfolio.html              # Project portfolio with filtering
+├── passions.html               # Personal interests and hobbies
+├── contact.html                # Contact information and form
+├── colors.css                  # Professional color scheme variables
+├── sundyne_logo.png            # Sundyne company logo
+├── csm_logo.jpg                # Colorado School of Mines logo
+├── Resume.pdf                  # Downloadable PDF resume
+├── nasa-hunch.html             # NASA HUNCH project details
+├── arduino-lockbox.html        # Arduino Lockbox project details
+├── derby-car.html              # Derby Car project details
+├── suitcase-redesign.html      # Suitcase Redesign project details
+├── compressor-database.html    # Compressor Database project details
+├── teaching-assistant.html     # Teaching Assistant role details
+└── README.md                   # This file
 ```
 
 ## 🎨 Design Features

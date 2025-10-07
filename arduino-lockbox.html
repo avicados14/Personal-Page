@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino Lockbox - Avi Aggarwal</title>
+    <link rel="stylesheet" href="colors.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text-primary); background: var(--gradient-subtle); min-height: 100vh; }
+        .container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        .back-link { display: inline-block; margin-bottom: 2rem; color: var(--primary-main); text-decoration: none; font-weight: 500; }
+        .back-link:hover { color: var(--secondary-main); }
+        .project-header { text-align: center; margin-bottom: 3rem; padding: 2rem; background: var(--bg-primary); border-radius: 10px; box-shadow: 0 5px 15px var(--shadow-light); }
+        .project-header h1 { color: var(--primary-dark); font-size: 2.5rem; margin-bottom: 1rem; }
+        .project-date { color: var(--secondary-main); font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .project-content { background: var(--bg-primary); padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px var(--shadow-light); margin-bottom: 2rem; }
+        .project-content h2 { color: var(--primary-main); margin-bottom: 1rem; border-bottom: 2px solid var(--secondary-main); padding-bottom: 0.5rem; }
+        .project-content p { margin-bottom: 1rem; color: var(--text-secondary); }
+        .tech-stack { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
+        .tech-tag { background: var(--secondary-pale); color: var(--secondary-main); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.9rem; font-weight: 500; }
+        .placeholder-content { background: var(--bg-secondary); padding: 2rem; border-radius: 10px; text-align: center; color: var(--text-secondary); font-style: italic; margin: 2rem 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="portfolio.html" class="back-link">← Back to Portfolio</a>
+        
+        <div class="project-header">
+            <h1>Arduino Lockbox</h1>
+            <div class="project-date">MEGN200 • Spring 2024</div>
+        </div>
+
+        <div class="project-content">
+            <h2>Project Overview</h2>
+            <p>Programmed and integrated a fingerprint sensor with an Arduino microcontroller to create a biometric security system. Developed circuitry, wiring, and code logic for lock control, and modeled housing using SolidWorks.</p>
+            
+            <h2>Technologies Used</h2>
+            <div class="tech-stack">
+                <span class="tech-tag">Arduino</span>
+                <span class="tech-tag">C++</span>
+                <span class="tech-tag">SolidWorks</span>
+                <span class="tech-tag">Biometrics</span>
+            </div>
+        </div>
+
+        <div class="project-content">
+            <h2>Project Documentation</h2>
+            <p>Access the complete project files including circuit diagrams, Arduino code, SolidWorks models, and photos of the finished lockbox:</p>
+            
+            <div style="text-align: center; margin: 2rem 0;">
+                <a href="https://drive.google.com/drive/folders/1uCuHx3D3vtJeh1cJJGQmJ_QRxAum1AF7?usp=sharing" 
+                   target="_blank" 
+                   style="display: inline-block; background: var(--primary-main); color: white; padding: 1rem 2rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
+                   📁 View Project Files & Code
+                </a>
+            </div>
+            
+            <p style="color: var(--text-secondary); font-size: 0.9rem; text-align: center;">
+                <em>Contains Arduino code, circuit schematics, SolidWorks CAD files, and project photos</em>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

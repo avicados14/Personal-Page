@@ -190,11 +190,7 @@
             border-color: var(--secondary-light);
         }
 
-        .portfolio-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
+
 
         .portfolio-item-content {
             padding: 1.5rem;
@@ -206,7 +202,7 @@
             font-size: 1.3rem;
         }
 
-        .portfolio-item .category {
+        .portfolio-item .project-date {
             color: var(--secondary-main);
             font-size: 0.9rem;
             font-weight: 600;
@@ -291,31 +287,7 @@
             margin: 0 auto;
         }
 
-        /* Filter Buttons */
-        .filter-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
 
-        .filter-btn {
-            padding: 0.75rem 1.5rem;
-            border: 2px solid var(--primary-main);
-            background: transparent;
-            color: var(--primary-main);
-            border-radius: 25px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: var(--primary-main);
-            color: var(--text-inverse);
-        }
 
         /* Footer */
         footer {
@@ -334,10 +306,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .filter-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
+
 
             .portfolio-links {
                 flex-direction: column;
@@ -386,80 +355,14 @@
                 <p>A collection of engineering projects, software development, and technical innovations that demonstrate my skills and passion for problem-solving.</p>
             </div>
 
-            <!-- Filter Buttons -->
-            <div class="filter-buttons">
-                <button class="filter-btn active" onclick="filterProjects('all')">All Projects</button>
-                <button class="filter-btn" onclick="filterProjects('engineering')">Engineering</button>
-                <button class="filter-btn" onclick="filterProjects('software')">Software</button>
-                <button class="filter-btn" onclick="filterProjects('research')">Research</button>
-            </div>
+
 
             <!-- Portfolio Grid -->
             <div class="portfolio-grid">
-                <!-- Arduino Lockbox Project -->
-                <div class="portfolio-item" data-category="engineering software">
-                    <img src="https://via.placeholder.com/400x200/2c5282/ffffff?text=Arduino+Lockbox" alt="Arduino Lockbox Project">
+                <!-- NASA HUNCH Project (High School - 2023) -->
+                <div class="portfolio-item">
                     <div class="portfolio-item-content">
-                        <div class="category">Engineering • Software</div>
-                        <h3>Arduino Lockbox (MEGN200)</h3>
-                        <p>Programmed and integrated a fingerprint sensor with an Arduino microcontroller to create a biometric security system. Developed circuitry, wiring, and code logic for lock control, and modeled housing using SolidWorks.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Arduino</span>
-                            <span class="tech-tag">C++</span>
-                            <span class="tech-tag">SolidWorks</span>
-                            <span class="tech-tag">Biometrics</span>
-                        </div>
-                        <div class="portfolio-links">
-                            <a href="#" class="portfolio-link primary">View Details</a>
-                            <a href="#" class="portfolio-link secondary">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Derby Car Project -->
-                <div class="portfolio-item" data-category="engineering">
-                    <img src="https://via.placeholder.com/400x200/d53f8c/ffffff?text=Derby+Car" alt="Derby Car Project">
-                    <div class="portfolio-item-content">
-                        <div class="category">Engineering</div>
-                        <h3>Derby Car (MEGN201)</h3>
-                        <p>Produced detailed GD&T drawings and performed tolerance stack-up analysis. Fabricated and assembled components, tested performance against design specifications and validated compliance.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">CAD Design</span>
-                            <span class="tech-tag">GD&T</span>
-                            <span class="tech-tag">Manufacturing</span>
-                            <span class="tech-tag">Testing</span>
-                        </div>
-                        <div class="portfolio-links">
-                            <a href="#" class="portfolio-link primary">View Details</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Suitcase Redesign Project -->
-                <div class="portfolio-item" data-category="engineering software">
-                    <img src="https://via.placeholder.com/400x200/38a169/ffffff?text=Suitcase+Redesign" alt="Suitcase Redesign Project">
-                    <div class="portfolio-item-content">
-                        <div class="category">Engineering • Software</div>
-                        <h3>Suitcase Redesign (EDNS151)</h3>
-                        <p>Applied CAD modeling and rapid prototyping to redesign a suitcase for improved usability. Developed a mobile app in support of product functionality and contributed to design evaluation and iteration.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">CAD Modeling</span>
-                            <span class="tech-tag">Mobile App</span>
-                            <span class="tech-tag">Prototyping</span>
-                            <span class="tech-tag">UX Design</span>
-                        </div>
-                        <div class="portfolio-links">
-                            <a href="#" class="portfolio-link primary">View Details</a>
-                            <a href="#" class="portfolio-link secondary">App Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- NASA HUNCH Project -->
-                <div class="portfolio-item" data-category="research engineering">
-                    <img src="https://via.placeholder.com/400x200/dd6b20/ffffff?text=NASA+HUNCH" alt="NASA HUNCH Project">
-                    <div class="portfolio-item-content">
-                        <div class="category">Research • Engineering</div>
+                        <div class="project-date">High School Project • 2023</div>
                         <h3>NASA HUNCH Micro-G Dice Rolling</h3>
                         <p>Developed a magnetic dice-rolling blaster with NASA's HUNCH program, leading testing and prototyping efforts that earned Design Review Finalist recognition and selection for MIT's reduced-gravity aircraft.</p>
                         <div class="tech-stack">
@@ -469,17 +372,69 @@
                             <span class="tech-tag">Testing</span>
                         </div>
                         <div class="portfolio-links">
-                            <a href="#" class="portfolio-link primary">View Details</a>
-                            <a href="#" class="portfolio-link secondary">NASA Report</a>
+                            <a href="nasa-hunch.html" class="portfolio-link primary">Learn More</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Compressor Database Project -->
-                <div class="portfolio-item" data-category="software engineering">
-                    <img src="https://via.placeholder.com/400x200/2c5282/ffffff?text=Compressor+Database" alt="Compressor Database Project">
+                <!-- Suitcase Redesign Project (Freshman Year - 2023) -->
+                <div class="portfolio-item">
                     <div class="portfolio-item-content">
-                        <div class="category">Software • Engineering</div>
+                        <div class="project-date">EDNS151 • Fall 2023</div>
+                        <h3>Suitcase Redesign</h3>
+                        <p>Applied CAD modeling and rapid prototyping to redesign a suitcase for improved usability. Developed a mobile app in support of product functionality and contributed to design evaluation and iteration.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">CAD Modeling</span>
+                            <span class="tech-tag">Mobile App</span>
+                            <span class="tech-tag">Prototyping</span>
+                            <span class="tech-tag">UX Design</span>
+                        </div>
+                        <div class="portfolio-links">
+                            <a href="suitcase-redesign.html" class="portfolio-link primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arduino Lockbox Project (Sophomore Year - 2024) -->
+                <div class="portfolio-item">
+                    <div class="portfolio-item-content">
+                        <div class="project-date">MEGN200 • Spring 2024</div>
+                        <h3>Arduino Lockbox</h3>
+                        <p>Programmed and integrated a fingerprint sensor with an Arduino microcontroller to create a biometric security system. Developed circuitry, wiring, and code logic for lock control, and modeled housing using SolidWorks.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">SolidWorks</span>
+                            <span class="tech-tag">Biometrics</span>
+                        </div>
+                        <div class="portfolio-links">
+                            <a href="arduino-lockbox.html" class="portfolio-link primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Derby Car Project (Sophomore Year - 2024) -->
+                <div class="portfolio-item">
+                    <div class="portfolio-item-content">
+                        <div class="project-date">MEGN201 • Fall 2024</div>
+                        <h3>Derby Car</h3>
+                        <p>Produced detailed GD&T drawings and performed tolerance stack-up analysis. Fabricated and assembled components, tested performance against design specifications and validated compliance.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">CAD Design</span>
+                            <span class="tech-tag">GD&T</span>
+                            <span class="tech-tag">Manufacturing</span>
+                            <span class="tech-tag">Testing</span>
+                        </div>
+                        <div class="portfolio-links">
+                            <a href="derby-car.html" class="portfolio-link primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compressor Database Project (Internship - 2024) -->
+                <div class="portfolio-item">
+                    <div class="portfolio-item-content">
+                        <div class="project-date">Sundyne Internship • Summer 2024</div>
                         <h3>Compressor Test Database</h3>
                         <p>Designed and developed a new Compressor Test Database at Sundyne, improving usability and accuracy for engineering workflows. Built organized databases to streamline sizing and analysis requests.</p>
                         <div class="tech-stack">
@@ -489,16 +444,15 @@
                             <span class="tech-tag">Workflow Optimization</span>
                         </div>
                         <div class="portfolio-links">
-                            <a href="#" class="portfolio-link primary">View Details</a>
+                            <a href="compressor-database.html" class="portfolio-link primary">Learn More</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Teaching Assistant Work -->
-                <div class="portfolio-item" data-category="software">
-                    <img src="https://via.placeholder.com/400x200/d53f8c/ffffff?text=Teaching+Assistant" alt="Teaching Assistant Work">
+                <!-- Teaching Assistant Work (Current - 2024-2025) -->
+                <div class="portfolio-item">
                     <div class="portfolio-item-content">
-                        <div class="category">Software • Education</div>
+                        <div class="project-date">Current Position • 2024-2025</div>
                         <h3>Computer Science Teaching Assistant</h3>
                         <p>Work with professors to create grading rubrics and assignments. Assist students with Python-based programming and code reviews, ensuring they target key computer science topics.</p>
                         <div class="tech-stack">
@@ -508,7 +462,7 @@
                             <span class="tech-tag">Mentoring</span>
                         </div>
                         <div class="portfolio-links">
-                            <a href="#" class="portfolio-link primary">View Details</a>
+                            <a href="teaching-assistant.html" class="portfolio-link primary">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -540,24 +494,7 @@
             }
         });
 
-        // Portfolio filtering
-        function filterProjects(category) {
-            const items = document.querySelectorAll('.portfolio-item');
-            const buttons = document.querySelectorAll('.filter-btn');
-            
-            // Update active button
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            
-            // Filter items
-            items.forEach(item => {
-                if (category === 'all' || item.dataset.category.includes(category)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
+
     </script>
 </body>
 </html>
