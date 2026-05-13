@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Passions - Avi Aggarwal</title>
+    <link rel="stylesheet" href="colors.css">
     <style>
         * {
             margin: 0;
@@ -14,8 +15,8 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #000;
-            background: linear-gradient(135deg, #e8f9fd 0%, #f0fcff 100%);
+            color: var(--text-primary);
+            background: var(--gradient-subtle);
             min-height: 100vh;
         }
 
@@ -27,7 +28,7 @@
 
         /* Navigation */
         nav {
-            background: rgba(26, 54, 93, 0.95);
+            background: rgba(15, 45, 74, 0.95);
             backdrop-filter: blur(10px);
             padding: 1rem 0;
             position: fixed;
@@ -65,7 +66,7 @@
 
         .nav-links a:hover,
         .nav-links a.active {
-            color: #E91E63;
+            color: var(--secondary-light);
         }
 
         .nav-links a::after {
@@ -75,7 +76,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #E91E63;
+            background: var(--secondary-main);
             transition: width 0.3s ease;
         }
 
@@ -101,7 +102,7 @@
             top: 100%;
             left: 0;
             width: 100%;
-            background: rgba(52, 152, 219, 0.98);
+            background: rgba(15, 45, 74, 0.98);
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
@@ -126,8 +127,8 @@
 
         .mobile-menu a:hover,
         .mobile-menu a.active {
-            background-color: rgba(255, 30, 0, 0.2);
-            color: #E91E63;
+            background-color: rgba(13, 148, 136, 0.2);
+            color: var(--secondary-light);
         }
 
         @media (max-width: 768px) {
@@ -140,28 +141,11 @@
             }
         }
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: #3498DB;
-        }
-
         /* Header */
         .header {
             padding: 120px 0 60px;
-            background: linear-gradient(135deg, #3498DB 0%, #E91E63 100%);
-            color: white;
+            background: var(--gradient-hero);
+            color: var(--text-inverse);
             text-align: center;
         }
 
@@ -190,12 +174,12 @@
         .intro-section h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #333;
+            color: var(--primary-dark);
         }
 
         .intro-section p {
             font-size: 1.1rem;
-            color: #666;
+            color: var(--text-secondary);
             max-width: 800px;
             margin: 0 auto;
         }
@@ -212,13 +196,13 @@
 
         .category-title {
             font-size: 2.2rem;
-            color: #3498DB;
+            color: var(--primary-main);
             margin-bottom: 1rem;
         }
 
         .category-description {
             font-size: 1.1rem;
-            color: #666;
+            color: var(--text-secondary);
             max-width: 600px;
             margin: 0 auto;
         }
@@ -230,7 +214,7 @@
         }
 
         .passion-card {
-            background: white;
+            background: var(--neutral-white);
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -244,8 +228,8 @@
 
         .passion-header {
             padding: 2rem;
-            background: linear-gradient(135deg, #3498DB 0%, #E91E63 100%);
-            color: white;
+            background: var(--gradient-primary);
+            color: var(--text-inverse);
             text-align: center;
         }
 
@@ -269,20 +253,20 @@
         }
 
         .passion-description {
-            color: #555;
+            color: var(--text-secondary);
             margin-bottom: 1.5rem;
             line-height: 1.7;
         }
 
         .passion-highlights {
-            background: #f8f9fa;
+            background: var(--bg-secondary);
             padding: 1.5rem;
             border-radius: 10px;
             margin-bottom: 1.5rem;
         }
 
         .passion-highlights h4 {
-            color: #333;
+            color: var(--text-primary);
             margin-bottom: 1rem;
             font-size: 1.1rem;
         }
@@ -292,7 +276,7 @@
         }
 
         .highlights-list li {
-            color: #666;
+            color: var(--text-secondary);
             margin-bottom: 0.5rem;
             padding-left: 1.5rem;
             position: relative;
@@ -300,33 +284,33 @@
 
         .highlights-list li:before {
             content: "✓";
-            color: #3498DB;
+            color: var(--secondary-main);
             font-weight: bold;
             position: absolute;
             left: 0;
         }
 
         .passion-connection {
-            background: linear-gradient(135deg, #f0f2ff 0%, #e8ebff 100%);
+            background: var(--bg-accent);
             padding: 1.5rem;
             border-radius: 10px;
-            border-left: 4px solid #3498DB;
+            border-left: 4px solid var(--secondary-main);
         }
 
         .passion-connection h4 {
-            color: #3498DB;
+            color: var(--secondary-main);
             margin-bottom: 0.5rem;
         }
 
         .passion-connection p {
-            color: #555;
+            color: var(--text-secondary);
             font-style: italic;
         }
 
         /* Quote Section */
         .quote-section {
-            background: linear-gradient(135deg, #3498DB 0%, #E91E63 100%);
-            color: white;
+            background: var(--gradient-hero);
+            color: var(--text-inverse);
             padding: 60px 0;
             text-align: center;
             margin: 60px 0;
@@ -351,8 +335,8 @@
 
         /* Footer */
         footer {
-            background: #333;
-            color: white;
+            background: var(--neutral-gray-800);
+            color: var(--text-inverse);
             text-align: center;
             padding: 2rem 0;
         }
