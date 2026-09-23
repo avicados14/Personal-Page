@@ -1,546 +1,163 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Avi Aggarwal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Projects and professional experience from Avi Aggarwal across mechanical design, controls, power systems, automation, and technical education.">
+    <meta name="theme-color" content="#0b1d31">
+    <title>Work | Avi Aggarwal</title>
     <link rel="stylesheet" href="colors.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background: var(--gradient-subtle);
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Navigation */
-        nav {
-            background: rgba(15, 45, 74, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 20px var(--shadow-medium);
-        }
-
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--text-inverse);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-inverse);
-            font-weight: 500;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--secondary-light);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--secondary-main);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            width: 100%;
-        }
-
-        /* Mobile Navigation */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-inverse);
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .mobile-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background: rgba(15, 45, 74, 0.98);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px var(--shadow-medium);
-        }
-
-        .mobile-menu.active {
-            display: block;
-        }
-
-        .mobile-menu ul {
-            list-style: none;
-            padding: 1rem 0;
-        }
-
-        .mobile-menu a {
-            display: block;
-            padding: 1rem 2rem;
-            color: var(--text-inverse);
-            text-decoration: none;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
-        }
-
-        .mobile-menu a:hover,
-        .mobile-menu a.active {
-            background-color: rgba(13, 148, 136, 0.2);
-            color: var(--secondary-light);
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-        }
-
-        /* Header */
-        .header {
-            background: var(--gradient-hero);
-            color: var(--text-inverse);
-            padding: 120px 0 60px;
-            text-align: center;
-        }
-
-        .header h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .header p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
-
-        /* Portfolio Content */
-        .portfolio-content {
-            padding: 60px 0;
-            background: var(--bg-primary);
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .portfolio-item {
-            background: var(--bg-secondary);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px var(--shadow-light);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid var(--border-light);
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px var(--shadow-colored);
-            border-color: var(--secondary-light);
-        }
-
-
-
-        .portfolio-item-content {
-            padding: 1.5rem;
-        }
-
-        .portfolio-item h3 {
-            color: var(--primary-main);
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
-        }
-
-        .portfolio-item .project-date {
-            color: var(--secondary-main);
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .portfolio-item p {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
-        .portfolio-item .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .tech-tag {
-            background: var(--secondary-pale);
-            color: var(--secondary-main);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .portfolio-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .portfolio-link {
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .portfolio-link.primary {
-            background: var(--gradient-primary);
-            color: var(--text-inverse);
-        }
-
-        .portfolio-link.primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px var(--shadow-colored);
-        }
-
-        .portfolio-link.secondary {
-            background: transparent;
-            color: var(--primary-main);
-            border: 2px solid var(--primary-main);
-        }
-
-        .portfolio-link.secondary:hover {
-            background: var(--primary-main);
-            color: var(--text-inverse);
-        }
-
-        /* Section Headers */
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: var(--primary-dark);
-            margin-bottom: 1rem;
-        }
-
-        .section-header p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-
-
-        /* Footer */
-        footer {
-            background: var(--neutral-gray-800);
-            color: var(--text-inverse);
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-
-
-
-            .portfolio-links {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <script src="site.js" defer></script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="logo">Avi Aggarwal</div>
-            <ul class="nav-links">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+        <nav class="site-nav container" aria-label="Primary navigation">
+            <a class="brand" href="index.html" aria-label="Avi Aggarwal, home"><span class="brand-mark" aria-hidden="true">AA</span><span class="brand-name">Avi Aggarwal</span></a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-links" aria-label="Toggle navigation"><span></span></button>
+            <ul class="nav-links" id="primary-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="portfolio.html" class="active">Portfolio</a></li>
-                <li><a href="passions.html">Passions</a></li>
+                <li><a href="portfolio.html" aria-current="page">Work</a></li>
+                <li><a href="passions.html">Interests</a></li>
                 <li><a href="resume.html">Resume</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a class="nav-cta" href="contact.html">Contact</a></li>
             </ul>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
-            <div class="mobile-menu" id="mobileMenu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
-                    <li><a href="passions.html">Passions</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="page-hero">
+            <div class="container" data-reveal>
+                <p class="kicker">Project and experience archive</p>
+                <h1>Work built to perform in the real world.</h1>
+                <p>From utility infrastructure and turbomachinery to control systems and teaching, each entry shows a different way I turn analysis into action.</p>
             </div>
-        </div>
-    </nav>
+        </section>
 
-    <!-- Header -->
-    <section class="header">
-        <div class="container">
-            <h1>Portfolio</h1>
-            <p>Showcasing my engineering projects, technical skills, and innovative solutions</p>
-        </div>
-    </section>
-
-    <!-- Portfolio Content -->
-    <section class="portfolio-content">
-        <div class="container">
-            <div class="section-header">
-                <h2>My Projects</h2>
-                <p>A collection of engineering projects, software development, and technical innovations that demonstrate my skills and passion for problem-solving.</p>
+        <nav class="anchor-tabs" aria-label="Work sections">
+            <div class="container">
+                <a href="#projects">Engineering projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Technical toolkit</a>
             </div>
+        </nav>
 
-
-
-            <!-- Portfolio Grid -->
-            <div class="portfolio-grid">
-                <!-- NASA HUNCH Project (High School - 2023) -->
-                <div class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <div class="project-date">High School Project • 2023</div>
-                        <h3>NASA HUNCH Micro-G Dice Rolling</h3>
-                        <p>Developed a magnetic dice-rolling blaster with NASA's HUNCH program, leading testing and prototyping efforts that earned Design Review Finalist recognition and selection for MIT's reduced-gravity aircraft.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">NASA HUNCH</span>
-                            <span class="tech-tag">Magnetic Systems</span>
-                            <span class="tech-tag">Prototyping</span>
-                            <span class="tech-tag">Testing</span>
-                        </div>
-                        <div class="portfolio-links">
-                            <a href="nasa-hunch.html" class="portfolio-link primary">Learn More</a>
-                        </div>
-                    </div>
+        <section class="section section-white" id="projects">
+            <div class="container">
+                <div class="section-heading" data-reveal>
+                    <div><span class="section-index">Engineering projects</span><h2>Five problems. Five paths to a working result.</h2></div>
+                    <p>The projects below follow the order and emphasis of my current resume, spanning controls, embedded systems, manufacturing, product design, and microgravity prototyping.</p>
                 </div>
-
-                <!-- Suitcase Redesign Project (Freshman Year - 2023) -->
-                <div class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <div class="project-date">EDNS151 • Fall 2023</div>
-                        <h3>Suitcase Redesign</h3>
-                        <p>Applied CAD modeling and rapid prototyping to redesign a suitcase for improved usability. Developed a mobile app in support of product functionality and contributed to design evaluation and iteration.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">CAD Modeling</span>
-                            <span class="tech-tag">Mobile App</span>
-                            <span class="tech-tag">Prototyping</span>
-                            <span class="tech-tag">UX Design</span>
-                        </div>
-                        <div class="portfolio-links">
-                            <a href="suitcase-redesign.html" class="portfolio-link primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Arduino Lockbox Project (Sophomore Year - 2024) -->
-                <div class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <div class="project-date">MEGN200 • Spring 2024</div>
+                <div class="full-project-grid">
+                    <article class="full-project-card" data-reveal>
+                        <p class="card-meta">MEGN300 · Controls and LabVIEW</p>
+                        <h3>PID Easy-Bake Oven</h3>
+                        <p>Designed and built an oven and developed a PID controller in LabVIEW to regulate temperature, successfully baking a cookie in approximately eight minutes.</p>
+                        <div class="tag-list"><span class="tag">PID control</span><span class="tag">LabVIEW</span><span class="tag">Thermal systems</span><span class="tag">Testing</span></div>
+                        <a class="card-link" href="pid-oven.html">Project details</a>
+                    </article>
+                    <article class="full-project-card" data-reveal>
+                        <p class="card-meta">MEGN200 · Embedded systems</p>
                         <h3>Arduino Lockbox</h3>
-                        <p>Programmed and integrated a fingerprint sensor with an Arduino microcontroller to create a biometric security system. Developed circuitry, wiring, and code logic for lock control, and modeled housing using SolidWorks.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Arduino</span>
-                            <span class="tech-tag">C++</span>
-                            <span class="tech-tag">SolidWorks</span>
-                            <span class="tech-tag">Biometrics</span>
-                        </div>
-                        <div class="portfolio-links">
-                            <a href="arduino-lockbox.html" class="portfolio-link primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Derby Car Project (Sophomore Year - 2024) -->
-                <div class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <div class="project-date">MEGN201 • Fall 2024</div>
+                        <p>Integrated a fingerprint sensor, Arduino control logic, custom circuitry, and a SolidWorks housing into a biometric security system.</p>
+                        <div class="tag-list"><span class="tag">Arduino</span><span class="tag">C++</span><span class="tag">Circuits</span><span class="tag">SolidWorks</span></div>
+                        <a class="card-link" href="arduino-lockbox.html">Project details</a>
+                    </article>
+                    <article class="full-project-card" data-reveal>
+                        <p class="card-meta">MEGN201 · Design for manufacture</p>
                         <h3>Derby Car</h3>
-                        <p>Produced detailed GD&T drawings and performed tolerance stack-up analysis. Fabricated and assembled components, tested performance against design specifications and validated compliance.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">CAD Design</span>
-                            <span class="tech-tag">GD&T</span>
-                            <span class="tech-tag">Manufacturing</span>
-                            <span class="tech-tag">Testing</span>
-                        </div>
-                        <div class="portfolio-links">
-                            <a href="derby-car.html" class="portfolio-link primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Xcel Energy Internship - Summer 2026 (Current) -->
-                <div class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <div class="project-date">Xcel Energy • June 2026 – Present</div>
-                        <h3>Substation Field Engineering Intern</h3>
-                        <p>Substation Field Engineering Intern at Xcel Energy, supporting substation design, field operations, and power systems engineering in the Denver area.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Power Systems</span>
-                            <span class="tech-tag">Substation Design</span>
-                            <span class="tech-tag">Field Engineering</span>
-                            <span class="tech-tag">Electrical Engineering</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Compressor Database Project (Internship - Summer 2025) -->
-                <div class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <div class="project-date">Sundyne Internship • Summer 2025</div>
+                        <p>Produced detailed GD&amp;T drawings, completed tolerance stack-up analysis, fabricated and assembled components, and validated performance against specifications.</p>
+                        <div class="tag-list"><span class="tag">GD&amp;T</span><span class="tag">Tolerance analysis</span><span class="tag">Fabrication</span><span class="tag">Validation</span></div>
+                        <a class="card-link" href="derby-car.html">Project details</a>
+                    </article>
+                    <article class="full-project-card" data-reveal>
+                        <p class="card-meta">EDNS151 · Product development</p>
+                        <h3>Suitcase Redesign</h3>
+                        <p>Applied CAD and rapid prototyping to improve suitcase usability, pairing the physical redesign with a supporting mobile application.</p>
+                        <div class="tag-list"><span class="tag">CAD</span><span class="tag">Rapid prototyping</span><span class="tag">Mobile app</span><span class="tag">Design iteration</span></div>
+                        <a class="card-link" href="suitcase-redesign.html">Project details</a>
+                    </article>
+                    <article class="full-project-card" data-reveal>
+                        <p class="card-meta">NASA HUNCH · Design Review Finalist</p>
+                        <h3>Micro-G Dice Rolling</h3>
+                        <p>Developed a magnetic dice-rolling blaster and led testing and prototyping, earning finalist recognition and selection for MIT's reduced-gravity aircraft.</p>
+                        <div class="tag-list"><span class="tag">Magnetic systems</span><span class="tag">Prototyping</span><span class="tag">Experimental testing</span><span class="tag">Team leadership</span></div>
+                        <a class="card-link" href="nasa-hunch.html">Project details</a>
+                    </article>
+                    <article class="full-project-card" data-reveal>
+                        <p class="card-meta">Sundyne · Engineering data</p>
                         <h3>Compressor Test Database</h3>
-                        <p>Designed and developed a new Compressor Test Database at Honeywell-Sundyne, improving usability and accuracy. Proposed modernization to SQL, built organized databases for Inducers, Pump Cases, and Seal Housings, and created Item Masters in JDE to support engineering workflows.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Database Design</span>
-                            <span class="tech-tag">SQL</span>
-                            <span class="tech-tag">JDE</span>
-                            <span class="tech-tag">Engineering Tools</span>
-                            <span class="tech-tag">P&ID</span>
-                        </div>
-                        <div class="portfolio-links">
-                            <a href="compressor-database.html" class="portfolio-link primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Teaching Assistant Work (Current - Aug 2024-Present) -->
-                <div class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <div class="project-date">Current Position • August 2024 – Present</div>
-                        <h3>Computer Science Teaching Assistant</h3>
-                        <p>Support undergraduate students in program development and logic comprehension at Colorado School of Mines. Work with professors to create grading rubrics and assignments targeting key computer science topics.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Code Review</span>
-                            <span class="tech-tag">Education</span>
-                            <span class="tech-tag">Mentoring</span>
-                        </div>
-                        <div class="portfolio-links">
-                            <a href="teaching-assistant.html" class="portfolio-link primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mathematics Teacher (Spring 2025) -->
-                <div class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <div class="project-date">Smart Math Tutoring • March – June 2025</div>
-                        <h3>Mathematics Teacher</h3>
-                        <p>Taught high school-level Algebra II, Pre-Calculus, and AP Calculus. Created teaching materials, modernized the scheduling system, and developed novel class structures to improve student engagement and space efficiency.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Algebra II</span>
-                            <span class="tech-tag">Pre-Calculus</span>
-                            <span class="tech-tag">AP Calculus</span>
-                            <span class="tech-tag">Curriculum Design</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- DroneTogether STEM Camp (Summer 2024) -->
-                <div class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <div class="project-date">DroneTogether • Summer 2024</div>
-                        <h3>STEM Camp Instructor</h3>
-                        <p>Developed and delivered a comprehensive drone-focused STEM curriculum for children ages 6-12. Designed interactive lessons covering drone assembly, flight basics, and problem-solving challenges to promote enthusiasm for STEM.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Drone Technology</span>
-                            <span class="tech-tag">STEM Education</span>
-                            <span class="tech-tag">Curriculum Design</span>
-                            <span class="tech-tag">Youth Mentoring</span>
-                        </div>
-                    </div>
+                        <p>Designed and demonstrated a more usable and accurate test database, organized component data, and proposed modernization to SQL.</p>
+                        <div class="tag-list"><span class="tag">Database design</span><span class="tag">SQL planning</span><span class="tag">JDE</span><span class="tag">P&amp;IDs</span></div>
+                        <a class="card-link" href="compressor-database.html">Case study</a>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Avi Aggarwal. All rights reserved.</p>
-        </div>
+        <section class="section" id="experience">
+            <div class="container">
+                <div class="section-heading" data-reveal>
+                    <div><span class="section-index">Experience</span><h2>Engineering, education, and operations.</h2></div>
+                    <p>Roles are presented in the same order as my current LinkedIn profile, preserving the full path that built my technical and communication skills.</p>
+                </div>
+                <div class="timeline">
+                    <article class="timeline-item" data-reveal>
+                        <p class="timeline-date">Aug 2024 – Present</p>
+                        <div class="timeline-role"><h3>Teaching Assistant</h3><p class="timeline-company">Colorado School of Mines</p></div>
+                        <div class="timeline-description">Support undergraduate students with program development and logic comprehension through office hours, skill development, code review, and test preparation.<br><a href="teaching-assistant.html">Role details</a></div>
+                    </article>
+                    <article class="timeline-item" data-reveal>
+                        <p class="timeline-date">Jun 2026 – Present</p>
+                        <div class="timeline-role"><h3>Substation Field Engineering Intern</h3><p class="timeline-company">Xcel Energy</p></div>
+                        <div class="timeline-description">Built Power Apps and AI-assisted maintenance workflows, supported breaker replacement work, interpreted one-lines and nameplates, and analyzed labor data for five-year cost forecasting.<br><a href="xcel-energy.html">Role details</a></div>
+                    </article>
+                    <article class="timeline-item" data-reveal>
+                        <p class="timeline-date">Jun – Aug 2025</p>
+                        <div class="timeline-role"><h3>Compressors Engineering Intern</h3><p class="timeline-company">Sundyne</p></div>
+                        <div class="timeline-description">Improved compressor testing data, supported the EPR 1451 LO Vortex Study, sized pumps and test hardware, and organized engineering references for component analysis.</div>
+                    </article>
+                    <article class="timeline-item" data-reveal>
+                        <p class="timeline-date">Mar – Jun 2025</p>
+                        <div class="timeline-role"><h3>Mathematics Teacher</h3><p class="timeline-company">Smart Math Tutoring</p></div>
+                        <div class="timeline-description">Taught Algebra II, Pre-Calculus, and AP Calculus while modernizing teaching materials, class structure, and student scheduling.</div>
+                    </article>
+                    <article class="timeline-item" data-reveal>
+                        <p class="timeline-date">Apr 2024 – Jan 2025</p>
+                        <div class="timeline-role"><h3>Movie Night Chair</h3><p class="timeline-company">Mines Activities Council</p></div>
+                        <div class="timeline-description">Managed campus events, licensing, vendors, quotes, budgets, and a new budget tracking system.</div>
+                    </article>
+                    <article class="timeline-item" data-reveal>
+                        <p class="timeline-date">May – Aug 2024</p>
+                        <div class="timeline-role"><h3>Summer Camp Instructor</h3><p class="timeline-company">DroneTogether</p></div>
+                        <div class="timeline-description">Created and taught a hands-on drone curriculum for ages 6–12, adapting technical lessons for different learners and group activities.</div>
+                    </article>
+                    <article class="timeline-item" data-reveal>
+                        <p class="timeline-date">Jul 2022 – Aug 2023</p>
+                        <div class="timeline-role"><h3>Member Service Representative</h3><p class="timeline-company">YMCA of Metropolitan Dallas</p></div>
+                        <div class="timeline-description">Supported members, conducted tours and transactions, supervised the gym floor, and provided first-aid support when needed.</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-dark" id="skills">
+            <div class="container">
+                <div class="section-heading" data-reveal>
+                    <div><span class="section-index">Technical toolkit</span><h2>Tools selected for the problem.</h2></div>
+                    <p>A working set that spans mechanical design, analysis, controls, software, manufacturing, and engineering operations.</p>
+                </div>
+                <div class="capability-grid">
+                    <article class="capability" data-reveal><h3>Design and analysis</h3><p>SolidWorks, GD&amp;T, tolerance stack-up, MATLAB, EES, load calculations, pump sizing, and drawing interpretation.</p></article>
+                    <article class="capability" data-reveal><h3>Software and data</h3><p>Python, C++, Arduino, LabVIEW, Power Apps, Dataverse, SharePoint, HTML, and engineering databases.</p></article>
+                    <article class="capability" data-reveal><h3>Build and test</h3><p>Machine shop practice, 3D printing, electrical wiring, rapid prototyping, test setup, fabrication, and validation.</p></article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid container"><p>© <span data-year>2026</span> Avi Aggarwal</p><div class="footer-links"><a href="mailto:avi_aggarwal@mines.edu">Email</a><a href="https://www.linkedin.com/in/aviaggarwal05/" target="_blank" rel="noopener">LinkedIn</a><a href="Resume.pdf" target="_blank" rel="noopener">Resume</a></div></div>
     </footer>
-
-    <script>
-        // Mobile menu toggle function
-        function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.classList.toggle('active');
-        }
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(e) {
-            const mobileMenu = document.getElementById('mobileMenu');
-            const menuBtn = document.querySelector('.mobile-menu-btn');
-            
-            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-                mobileMenu.classList.remove('active');
-            }
-        });
-
-
-    </script>
 </body>
 </html>
