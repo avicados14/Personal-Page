@@ -11,11 +11,14 @@ A static engineering portfolio for Avi Aggarwal, a Mechanical Engineering studen
 All deployable files remain in the repository root for straightforward GitHub Pages hosting.
 
 - `index.html` — profile and selected work
-- `portfolio.html` — projects, experience, and technical toolkit
+- `portfolio.html` — field-prioritized projects, experience, and technical toolkit
 - `resume.html` — accessible web resume with scroll reveals
 - `passions.html` — technical and personal interests
-- `contact.html` — contact details and scheduling embed
+- `contact.html` — verified contact details and inquiry guidance
+- `myhub.html` — GitHub case study on constraint scheduling, unit-safe inventory, and software reliability
+- `wearwise.html` — GitHub case study on transactional workflows, decision support, and bounded AI automation
 - `pid-oven.html`, `xcel-energy.html`, and other detail pages — project and role case studies
+- `myhub-dashboard.png` and `myhub-grocery-mobile.png` — public demonstration screenshots from the MyHub repository
 - `colors.css` — shared design system and responsive styles
 - `site.js` — shared navigation, reveal, and utility interactions
 - `Resume.pdf` — current downloadable one-page resume

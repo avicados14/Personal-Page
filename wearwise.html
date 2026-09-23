@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Wearwise is Avi Aggarwal's full-stack wardrobe workflow for condition-aware planning, transactional state, and bounded AI automation.">
+    <meta name="theme-color" content="#0b1d31">
+    <title>Wearwise Workflow | Avi Aggarwal</title>
+    <link rel="stylesheet" href="colors.css">
+    <script src="site.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+        <nav class="site-nav container" aria-label="Primary navigation">
+            <a class="brand" href="index.html" aria-label="Avi Aggarwal, home"><span class="brand-mark" aria-hidden="true">AA</span><span class="brand-name">Avi Aggarwal</span></a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-links" aria-label="Toggle navigation"><span></span></button>
+            <ul class="nav-links" id="primary-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html" aria-current="page">Work</a></li>
+                <li><a href="passions.html">Interests</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a class="nav-cta" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="page-hero">
+            <div class="container" data-reveal>
+                <p class="kicker">GitHub project · Workflow automation and decision support</p>
+                <h1>Wearwise</h1>
+                <p>A full-stack wardrobe planner that uses weather, occasion, inventory state, and constrained automation to produce reliable, traceable outfit plans.</p>
+                <div class="button-row">
+                    <a class="button button-light" href="https://github.com/avicados14/ClothesPlanner" target="_blank" rel="noopener">View public repository</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-main">
+            <div class="container">
+                <a class="back-link" href="portfolio.html#github-projects">← Back to GitHub projects</a>
+                <div class="workflow-sequence" aria-label="Wearwise planning sequence" data-reveal>
+                    <div><span>1</span><strong>Observe</strong><p>Weather and occasion</p></div>
+                    <div><span>2</span><strong>Constrain</strong><p>Clean, user-owned items</p></div>
+                    <div><span>3</span><strong>Plan</strong><p>Validated recommendation</p></div>
+                    <div><span>4</span><strong>Record</strong><p>History and laundry state</p></div>
+                </div>
+
+                <div class="detail-layout">
+                    <article class="detail-article" data-reveal="left">
+                        <section class="detail-block">
+                            <h2>Problem framing</h2>
+                            <p>Wearwise treats clothing availability as operational state. A useful recommendation must reflect current conditions, only select available items, update inventory consistently, and leave a readable record of the plan.</p>
+                        </section>
+
+                        <section class="detail-block">
+                            <h2>Transactional workflow</h2>
+                            <p>When a plan is created, the server verifies that every selected item belongs to the authenticated user and is clean. It then stores a dated plan and immutable item snapshot before marking those exact items dirty within one database transaction.</p>
+                            <div class="field-alignment">
+                                <strong>Field alignment</strong>
+                                <span>State integrity</span><span>Workflow reliability</span><span>Traceability</span>
+                            </div>
+                        </section>
+
+                        <section class="detail-block">
+                            <h2>Condition-aware decision support</h2>
+                            <p>Current weather and occasion inputs narrow the decision context. Recommendations operate only on clean inventory, while dated plans and a versioned JSON export preserve the state used for each decision.</p>
+                        </section>
+
+                        <section class="detail-block">
+                            <h2>Bounded AI automation</h2>
+                            <p>Structured response schemas, category validation, an allowed-item identifier list, duplicate removal, and minimum-item checks keep model output inside the application's constraints. If a model call fails, deterministic fallbacks preserve a usable cataloging and planning path.</p>
+                        </section>
+
+                        <section class="detail-block">
+                            <h2>System architecture</h2>
+                            <p>The private workflow combines a React and TypeScript client with Express, tRPC, Drizzle ORM, relational storage, and server-side image analysis. A separate static companion demonstrates local catalog filtering, laundry state, weather input, and history export without exposing the authenticated data workflow.</p>
+                        </section>
+
+                        <section class="detail-block">
+                            <h2>Verification and limits</h2>
+                            <p>Type checking, four focused unit tests, and a production build passed during repository review. The tests cover authentication logout and core wardrobe-planning rules; this project is presented as a workflow and data-reliability case study, not as mechanical analysis or a production reliability claim.</p>
+                        </section>
+                    </article>
+
+                    <aside class="detail-aside" data-reveal="right">
+                        <dl class="fact-list">
+                            <div class="fact"><dt>Repository</dt><dd><a href="https://github.com/avicados14/ClothesPlanner" target="_blank" rel="noopener">avicados14/ClothesPlanner</a></dd></div>
+                            <div class="fact"><dt>Primary relevance</dt><dd>Workflow automation · state integrity · decision support</dd></div>
+                            <div class="fact"><dt>Core methods</dt><dd>Transactions · constrained outputs · deterministic fallback</dd></div>
+                            <div class="fact"><dt>Stack</dt><dd>React · TypeScript · Express · tRPC</dd></div>
+                            <div class="fact"><dt>Data layer</dt><dd>Drizzle ORM · relational schema · object storage</dd></div>
+                            <div class="fact"><dt>Verification</dt><dd>Vitest · type checking · production build</dd></div>
+                        </dl>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer"><div class="footer-grid container"><p>© <span data-year>2026</span> Avi Aggarwal</p><div class="footer-links"><a href="mailto:avi_aggarwal@mines.edu">Email</a><a href="https://www.linkedin.com/in/aviaggarwal05/" target="_blank" rel="noopener">LinkedIn</a><a href="Resume.pdf" target="_blank" rel="noopener">Resume</a></div></div></footer>
+</body>
+</html>

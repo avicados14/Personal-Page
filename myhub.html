@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="MyHub is Avi Aggarwal's local-first operations planner for constraint scheduling, unit-safe inventory, and traceable workflows.">
+    <meta name="theme-color" content="#0b1d31">
+    <title>MyHub Operations Planner | Avi Aggarwal</title>
+    <link rel="stylesheet" href="colors.css">
+    <script src="site.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+        <nav class="site-nav container" aria-label="Primary navigation">
+            <a class="brand" href="index.html" aria-label="Avi Aggarwal, home"><span class="brand-mark" aria-hidden="true">AA</span><span class="brand-name">Avi Aggarwal</span></a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-links" aria-label="Toggle navigation"><span></span></button>
+            <ul class="nav-links" id="primary-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html" aria-current="page">Work</a></li>
+                <li><a href="passions.html">Interests</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a class="nav-cta" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="page-hero">
+            <div class="container" data-reveal>
+                <p class="kicker">GitHub project · Operations planning and engineering data</p>
+                <h1>MyHub</h1>
+                <p>A local-first React and TypeScript application that turns deadlines, calendar constraints, recipes, and inventory into deterministic, reviewable plans.</p>
+                <div class="button-row">
+                    <a class="button button-light" href="https://github.com/avicados14/MyHub" target="_blank" rel="noopener">View public repository</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-main">
+            <div class="container">
+                <a class="back-link" href="portfolio.html#github-projects">← Back to GitHub projects</a>
+                <figure class="project-visual project-visual-wide" data-reveal>
+                    <img src="myhub-dashboard.png" alt="MyHub demonstration dashboard showing calendar commitments, study priorities, meal planning, and quantitative daily status">
+                    <figcaption>Demonstration data shows how scheduling, planning, and quantitative status are brought into one responsive interface.</figcaption>
+                </figure>
+
+                <div class="detail-layout">
+                    <article class="detail-article" data-reveal="left">
+                        <section class="detail-block">
+                            <h2>Problem framing</h2>
+                            <p>MyHub treats recurring personal workflows as a connected operations problem rather than a collection of unrelated lists. Time, assignments, meals, pantry inventory, and shopping all have constraints, dependencies, and histories that need to remain understandable as records change.</p>
+                        </section>
+
+                        <section class="detail-block">
+                            <h2>Constraint-based automation</h2>
+                            <p>The study planner uses deterministic rules rather than opaque recommendations. It orders incomplete work by deadline and priority, accounts for progress and existing blocks, avoids calendar conflicts and protected times, adds breaks, preserves previously scheduled work, and reports work that cannot fit.</p>
+                            <div class="field-alignment">
+                                <strong>Field alignment</strong>
+                                <span>Operations planning</span><span>Constraint handling</span><span>Transparent automation</span>
+                            </div>
+                        </section>
+
+                        <section class="detail-block">
+                            <h2>Engineering data integrity</h2>
+                            <p>The grocery workflow aggregates only dimensionally compatible mass, volume, and count values. Ambiguous matches stay separate for review, pantry decisions are explicit, and completed shopping trips are retained as immutable history. Stable identifiers, timestamps, provenance, and versioned migrations keep the data traceable.</p>
+                        </section>
+
+                        <section class="detail-block">
+                            <h2>Reliability and verification</h2>
+                            <p>Pure domain rules are separated from browser workflows so scheduling, unit conversion, inventory, and lifecycle behavior can be tested directly. During this review, formatting, linting, strict type checking, unit tests, and the production build all passed, followed by all 123 Playwright scenarios across desktop, tablet, mobile, and accessibility coverage.</p>
+                        </section>
+
+                        <section class="detail-block">
+                            <h2>Privacy-aware architecture</h2>
+                            <p>Core records remain in browser storage by default. External imports pass through explicit review boundaries, credentials are separated from normal application backups, and optional synchronization is designed around client-side encryption. Private supporting infrastructure and personal data are intentionally not linked or shown here.</p>
+                        </section>
+
+                        <section class="detail-block">
+                            <h2>Mobile inventory workflow</h2>
+                            <figure class="project-visual project-visual-mobile">
+                                <img src="myhub-grocery-mobile.png" alt="Focused view of the MyHub mobile grocery workflow with categorized items, quantities, progress, and trip completion">
+                                <figcaption>A focused view of the mobile workflow shows quantities, completion state, and the trip handoff at the point of use.</figcaption>
+                            </figure>
+                        </section>
+                    </article>
+
+                    <aside class="detail-aside" data-reveal="right">
+                        <dl class="fact-list">
+                            <div class="fact"><dt>Repository</dt><dd><a href="https://github.com/avicados14/MyHub" target="_blank" rel="noopener">avicados14/MyHub</a></dd></div>
+                            <div class="fact"><dt>Primary relevance</dt><dd>Automation · operations planning · engineering data</dd></div>
+                            <div class="fact"><dt>Core methods</dt><dd>Constraint scheduling · unit-safe aggregation · provenance</dd></div>
+                            <div class="fact"><dt>Stack</dt><dd>React · TypeScript · Vite · IndexedDB</dd></div>
+                            <div class="fact"><dt>Verified quality gate</dt><dd>Unit checks · build · 123 Playwright scenarios</dd></div>
+                            <div class="fact"><dt>Delivery</dt><dd>Static GitHub Pages application</dd></div>
+                        </dl>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer"><div class="footer-grid container"><p>© <span data-year>2026</span> Avi Aggarwal</p><div class="footer-links"><a href="mailto:avi_aggarwal@mines.edu">Email</a><a href="https://www.linkedin.com/in/aviaggarwal05/" target="_blank" rel="noopener">LinkedIn</a><a href="Resume.pdf" target="_blank" rel="noopener">Resume</a></div></div></footer>
+</body>
+</html>

@@ -37,6 +37,7 @@
         <nav class="anchor-tabs" aria-label="Work sections">
             <div class="container">
                 <a href="#projects">Engineering projects</a>
+                <a href="#github-projects">GitHub projects</a>
                 <a href="#experience">Experience</a>
                 <a href="#skills">Technical toolkit</a>
             </div>
@@ -45,51 +46,65 @@
         <section class="section section-white" id="projects">
             <div class="container">
                 <div class="section-heading" data-reveal>
-                    <div><span class="section-index">Engineering projects</span><h2>Six projects. Six paths from problem to result.</h2></div>
-                    <p>The first five academic projects follow the order of my current resume. The final case study highlights public-safe work from my compressor engineering internship.</p>
+                    <div><span class="section-index">Engineering and software projects</span><h2>Eight projects, prioritized by field alignment.</h2></div>
+                    <p>The sequence leads with controls, turbomachinery, automation, engineering data, embedded systems, manufacturing, and experimental testing. Human-centered software follows as supporting evidence of workflow design.</p>
                 </div>
                 <div class="full-project-grid">
-                    <article class="full-project-card" data-reveal>
-                        <p class="card-meta">MEGN300 · PID and LabVIEW</p>
+                    <article class="full-project-card field-priority" data-reveal>
+                        <p class="card-meta">Controls and thermal systems · MEGN300</p>
                         <h3>PID Easy-Bake Oven</h3>
                         <p>Designed and built an oven and developed a PID controller in LabVIEW to regulate temperature, successfully baking a cookie in approximately eight minutes.</p>
                         <div class="tag-list"><span class="tag">PID control</span><span class="tag">LabVIEW</span><span class="tag">Thermal systems</span><span class="tag">Testing</span></div>
                         <a class="card-link" href="pid-oven.html">Project details</a>
                     </article>
+                    <article class="full-project-card field-priority" data-reveal>
+                        <p class="card-meta">Turbomachinery and engineering data · Honeywell-Sundyne</p>
+                        <h3>Compressor Engineering Internship</h3>
+                        <p>Designed and demonstrated an engineering-data prototype, organized structured reference information, and contributed to early-stage fluid-system analysis and test planning.</p>
+                        <div class="tag-list"><span class="tag">Fluid systems</span><span class="tag">Data workflows</span><span class="tag">Python</span><span class="tag">Test planning</span></div>
+                        <a class="card-link" href="compressor-database.html">Internship overview</a>
+                    </article>
+                    <article class="full-project-card github-project-card" id="github-projects" data-reveal>
+                        <p class="card-meta">GitHub · Automation and operations planning</p>
+                        <h3>MyHub</h3>
+                        <p>Built a deterministic planning system for deadline scheduling and unit-safe inventory workflows, with provenance, validated migrations, accessible interfaces, and automated quality gates.</p>
+                        <div class="tag-list"><span class="tag">Constraint scheduling</span><span class="tag">Engineering data</span><span class="tag">Unit conversion</span><span class="tag">Reliability testing</span></div>
+                        <a class="card-link" href="myhub.html">Engineering case study</a>
+                    </article>
                     <article class="full-project-card" data-reveal>
-                        <p class="card-meta">MEGN200 · Arduino project</p>
+                        <p class="card-meta">Embedded control and mechanical integration · MEGN200</p>
                         <h3>Arduino Lockbox</h3>
                         <p>Integrated a fingerprint sensor, Arduino control logic, custom circuitry, and a SolidWorks housing into a biometric security system.</p>
                         <div class="tag-list"><span class="tag">Arduino</span><span class="tag">C++</span><span class="tag">Circuits</span><span class="tag">SolidWorks</span></div>
                         <a class="card-link" href="arduino-lockbox.html">Project details</a>
                     </article>
                     <article class="full-project-card" data-reveal>
-                        <p class="card-meta">MEGN201 · GD&amp;T and tolerance analysis</p>
+                        <p class="card-meta">Manufacturing and validation · MEGN201</p>
                         <h3>Derby Car</h3>
                         <p>Produced detailed GD&amp;T drawings, completed tolerance stack-up analysis, fabricated and assembled components, and validated performance against specifications.</p>
                         <div class="tag-list"><span class="tag">GD&amp;T</span><span class="tag">Tolerance analysis</span><span class="tag">Fabrication</span><span class="tag">Validation</span></div>
                         <a class="card-link" href="derby-car.html">Project details</a>
                     </article>
                     <article class="full-project-card" data-reveal>
-                        <p class="card-meta">EDNS151 · CAD and rapid prototyping</p>
-                        <h3>Suitcase Redesign</h3>
-                        <p>Applied CAD and rapid prototyping to improve suitcase usability, pairing the physical redesign with a supporting mobile application.</p>
-                        <div class="tag-list"><span class="tag">CAD</span><span class="tag">Rapid prototyping</span><span class="tag">Mobile app</span><span class="tag">Design iteration</span></div>
-                        <a class="card-link" href="suitcase-redesign.html">Project details</a>
-                    </article>
-                    <article class="full-project-card" data-reveal>
-                        <p class="card-meta">NASA HUNCH · Design Review Finalist</p>
+                        <p class="card-meta">Experimental design and testing · NASA HUNCH</p>
                         <h3>Micro-G Dice Rolling</h3>
                         <p>Developed a magnetic dice-rolling blaster and led testing and prototyping, earning finalist recognition and selection for MIT's reduced-gravity aircraft.</p>
                         <div class="tag-list"><span class="tag">Magnetic systems</span><span class="tag">Prototyping</span><span class="tag">Experimental testing</span><span class="tag">Team leadership</span></div>
                         <a class="card-link" href="nasa-hunch.html">Project details</a>
                     </article>
-                    <article class="full-project-card" data-reveal>
-                        <p class="card-meta">Honeywell-Sundyne · Engineering internship</p>
-                        <h3>Compressor Engineering Internship</h3>
-                        <p>Designed and demonstrated an engineering-data prototype, organized structured reference information, and contributed to early-stage fluid-system analysis and test planning.</p>
-                        <div class="tag-list"><span class="tag">Data workflows</span><span class="tag">Python</span><span class="tag">Engineering analysis</span><span class="tag">Technical documentation</span></div>
-                        <a class="card-link" href="compressor-database.html">Internship overview</a>
+                    <article class="full-project-card github-project-card secondary-project" data-reveal>
+                        <p class="card-meta">GitHub · Workflow reliability and decision support</p>
+                        <h3>Wearwise</h3>
+                        <p>Built a transactional planning workflow that keeps inventory state consistent, constrains automated recommendations, and preserves dated history with deterministic fallbacks.</p>
+                        <div class="tag-list"><span class="tag">State integrity</span><span class="tag">Transactions</span><span class="tag">Decision support</span><span class="tag">AI guardrails</span></div>
+                        <a class="card-link" href="wearwise.html">Workflow case study</a>
+                    </article>
+                    <article class="full-project-card secondary-project" data-reveal>
+                        <p class="card-meta">Human-centered design · EDNS151</p>
+                        <h3>Suitcase Redesign</h3>
+                        <p>Applied CAD and rapid prototyping to improve suitcase usability, pairing the physical redesign with a supporting mobile application.</p>
+                        <div class="tag-list"><span class="tag">CAD</span><span class="tag">Rapid prototyping</span><span class="tag">Mobile app</span><span class="tag">Design iteration</span></div>
+                        <a class="card-link" href="suitcase-redesign.html">Project details</a>
                     </article>
                 </div>
             </div>
@@ -149,7 +164,7 @@
                 </div>
                 <div class="capability-grid">
                     <article class="capability" data-reveal><h3>Design and analysis</h3><p>SolidWorks, GD&amp;T, tolerance stack-up, MATLAB, EES, load calculations, pump sizing, and drawing interpretation.</p></article>
-                    <article class="capability" data-reveal><h3>Software and data</h3><p>Python, C++, Arduino, LabVIEW, Power Apps, Dataverse, SharePoint, and engineering databases.</p></article>
+                    <article class="capability" data-reveal><h3>Software and data</h3><p>Python, TypeScript, React, C++, Arduino, LabVIEW, Power Apps, Dataverse, SharePoint, relational data, and engineering databases.</p></article>
                     <article class="capability" data-reveal><h3>Build and test</h3><p>Machine shop practice, 3D printing, electrical wiring, rapid prototyping, test setup, fabrication, and validation.</p></article>
                 </div>
             </div>
